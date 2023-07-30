@@ -6,15 +6,29 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "lazyy": "sass  --no-source-map src/styles/index.scss:src/styles/index.css",
+    "watch:lazyy": "sass  --no-source-map src/styles/index.scss:src/styles/index.css --watch",
+    "purge:lazyy": "purgecss --css src/styles/index.css --content \"src/app/**/*.tsx\" \"src/components**/*.tsx\" --output src/styles/",
+    "build:lazyy": "npm run purge:lazyy && postcss src/styles/index.css -u autoprefixer cssnano -r --no-map"
   },
   "dependencies": {
+    "@fullhuman/postcss-purgecss": "^5.0.0",
     "@types/node": "20.4.5",
     "@types/react": "18.2.17",
     "@types/react-dom": "18.2.7",
+    "autoprefixer": "^10.4.14",
+    "cssnano": "^6.0.1",
+    "material-symbols": "^0.10.2",
     "next": "13.4.12",
+    "purgecss": "^5.0.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "sass": "^1.64.1",
     "typescript": "5.1.6"
+  },
+  "devDependencies": {
+    "postcss": "^8.4.27",
+    "postcss-cli": "^10.1.0"
   }
 }

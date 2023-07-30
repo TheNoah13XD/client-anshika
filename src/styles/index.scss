@@ -1,0 +1,38 @@
+// base & variables
+@import 'base/type';
+@import 'base/variables';
+@import 'base/base';
+
+// layout
+@import 'layout/breakpoints';
+@import 'layout/grid';
+
+// colors
+@import url(./tokens/tokens.css);
+@import url(./tokens/theme.light.css) (prefers-color-scheme: light);
+@import url(./tokens/theme.dark.css) (prefers-color-scheme: dark);
+@import 'themes/colors';
+
+// components
+// @import 'components/navbar';
+// @import 'components/navrail';
+// @import 'components/card';
+// @import 'components/avatar';
+// @import 'components/list';
+@import 'components/button';
+// @import 'components/modal';
+// @import 'components/toast';
+// @import 'components/forms';
+
+// utilities
+@import 'base/utilities';
+@import 'layout/utility-layout';
+
+// changes & additions
+.container {
+    width: 100%;
+    height: 100vh;
+    margin: 0;
+    padding: 56px 0;
+    box-sizing: border-box;
+}

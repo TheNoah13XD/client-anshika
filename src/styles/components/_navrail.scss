@@ -1,0 +1,12 @@
+.rail {
+    width: 72px;
+    height: calc(100vh - 112px);
+    position: fixed;
+    left: 0;
+    z-index: 9999;
+    transition: $base-easing;
+    background-color: #752424;
+    .rail-content {
+        margin: auto;
+    }
+}
