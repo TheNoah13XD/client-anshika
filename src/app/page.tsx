@@ -1,9 +1,9 @@
-import Button from "@/components/Button"
+import Button from "@/components/ui/Button"
 
 export default function Home() {
   return (
 		<>
-			<div className="display-f p-4">
+			<div className="display-f">
 				<Button type="filled" icon="settings">Filled</Button>
 				<Button type="elevated">elevated</Button>
 				<Button type="tonal">tonal</Button>

@@ -1,7 +1,10 @@
 import type { Metadata } from 'next'
 
+// styles
 import '@/styles/index.css'
-import 'material-symbols';
+
+// components
+import Nav from '@/components/Nav';
 
 export const metadata: Metadata = {
 	title: '.anshika - portfolio',
@@ -15,7 +18,10 @@ export default function RootLayout({
 }) {
 	return (
 		<html lang="en">
-			<body>{children}</body>
+			<body className='container display-f'>
+				<Nav />
+				{children}
+			</body>
 		</html>
 	)
 }

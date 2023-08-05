@@ -15,7 +15,7 @@
 
 // components
 // @import 'components/navbar';
-// @import 'components/navrail';
+@import 'components/navrail';
 // @import 'components/card';
 // @import 'components/avatar';
 // @import 'components/list';
@@ -35,4 +35,43 @@
     margin: 0;
     padding: 56px 0;
     box-sizing: border-box;
+}
+
+.rail {
+    background-color: var(--md-sys-color-primary-container);
+    .rail-content {
+        .destination-item {
+            .indicator {
+                .icon {
+                    color: var(--md-sys-color-on-surface);
+                }
+            }
+            .label {
+                color: var(--md-sys-color-on-surface);
+                font-weight: $bold-fw;
+            }
+        }
+        .destination-active {
+            .indicator {
+                background-color: var(--md-sys-color-on-primary-container);
+                .icon {
+                    color: #fff;
+                }
+            }
+            .label {
+                color: var(--md-sys-color-on-primary-container);
+                font-weight: $bold-fw;
+            }
+            &:hover {
+                .indicator {
+                    background-color: color-mix(in srgb, var(--md-sys-color-on-primary-container), #fff 8%);
+                }
+            }
+            &:active {
+                .indicator {
+                    background-color: color-mix(in srgb, var(--md-sys-color-on-primary-container), #fff 12%);
+                }
+            }
+        }
+    }
 }
