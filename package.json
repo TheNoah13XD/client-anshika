@@ -4,13 +4,13 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
+    "build": "next build",
     "start": "next start",
     "lint": "next lint",
     "lazyy": "sass  --no-source-map src/styles/index.scss:src/styles/index.css",
     "watch:lazyy": "sass  --no-source-map src/styles/index.scss:src/styles/index.css --watch",
-    "purge:lazyy": "purgecss --css .next/static/css/*.css --content .next/server/**/*.html --output .next/static/css/",
-    "build:lazyy": "npm run purge:lazyy && postcss src/styles/index.css -u autoprefixer cssnano -r --no-map",
-    "build": "next build && npm run build:lazyy"
+    "purge:lazyy": "purgecss --css src/styles/index.css --content \"src/app/**/*.tsx\" \"src/components**/*.tsx\" --output src/styles/",
+    "build:lazyy": "npm run purge:lazyy && postcss src/styles/index.css -u autoprefixer cssnano -r --no-map"
   },
   "dependencies": {
     "@fullhuman/postcss-purgecss": "^5.0.0",
