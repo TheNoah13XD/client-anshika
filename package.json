@@ -8,7 +8,7 @@
     "lint": "next lint",
     "lazyy": "sass  --no-source-map src/styles/index.scss:src/styles/index.css",
     "watch:lazyy": "sass  --no-source-map src/styles/index.scss:src/styles/index.css --watch",
-    "purge:lazyy:html": "purgecss --css .next/static/css/*.css --content .next/server/**/*.html --output .next/static/css/",
+    "purge:lazyy": "purgecss --css .next/static/css/*.css --content .next/server/**/*.html --output .next/static/css/",
     "build:lazyy": "npm run purge:lazyy && postcss src/styles/index.css -u autoprefixer cssnano -r --no-map",
     "build": "next build && npm run build:lazyy"
   },
