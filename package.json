@@ -5,10 +5,10 @@
   "scripts": {
     "lazyy": "sass  --no-source-map src/styles/index.scss:src/styles/index.css",
     "watch:lazyy": "sass  --no-source-map src/styles/index.scss:src/styles/index.css --watch",
-    "purge:lazyy": "purgecss --css src/styles/index.css --content \"src/**/*.tsx\" --output src/styles/",
+    "purge:lazyy": "purgecss --css src/styles/index.css --content \"out/**/*.html\" --output src/styles/",
     "build:lazyy": "npm run purge:lazyy && postcss src/styles/index.css -u autoprefixer cssnano -r --no-map",
     "dev": "next dev",
-    "build": "next build",
+    "build": "next build && npm run build:lazyy",
     "start": "next start",
     "lint": "next lint"
   },
