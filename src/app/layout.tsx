@@ -4,7 +4,9 @@ import type { Metadata } from 'next'
 import '@/styles/index.css'
 
 // components
+import { Grid, Col } from '@/components/ui/Grid';
 import Nav from '@/components/Nav';
+import Scene from '@/components/Scene';
 
 export const metadata: Metadata = {
 	title: '.anshika - portfolio',
@@ -19,8 +21,17 @@ export default function RootLayout({
 	return (
 		<html lang="en">
 			<body className='container display-f'>
+
 				<Nav />
-				{children}
+				
+				<Scene>
+					<Grid>
+						<Col>
+							{children}
+						</Col>
+					</Grid>
+				</Scene>
+
 			</body>
 		</html>
 	)

@@ -1,7 +1,7 @@
 'use client'
 
 import React from 'react';
-import { FC, ReactNode } from 'react';
+import { FC } from 'react';
 import { usePathname } from 'next/navigation';
 import Link from 'next/link';
 
@@ -9,7 +9,7 @@ import { MaterialSymbol } from 'material-symbols';
 import Icon from './Icon';
 
 interface NavRailProps {
-    children: ReactNode;
+    children: React.ReactNode;
 }
 
 interface NavItemProps {

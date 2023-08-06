@@ -1,112 +1,66 @@
-@use 'sass:math';
-
-$grid-columns: 12;
-$grid-gaps: (
-    "0": 0,
-    "1": 12px,
-    "2": 24px,
-    "3": 36px,
-    "4": 48px,
-    "5": 60px
+$grid-configurations: (
+  "xs": (columns: 4, gap: 16px, margin: 16px),
+  "sm": (columns: 8, gap: 16px, margin: 32px),
+  "md": (columns: 12, gap: 12px, margin: 32px),
+  "mg": (columns: 12, gap: 24px, margin: 48px),
+  "lg": (columns: 12, gap: 24px, margin: 48px),
+  "xl": (columns: 12, gap: 24px, margin: 48px)
 );
 
-// base classes
-
-.container {
-    width: 100%;
-    margin: 0;
-    padding: 0 24px;
-    box-sizing: border-box;
-    z-index: -2;
+@mixin generate-grid($columns, $gap, $margin) {
+  display: grid;
+  grid-template-columns: repeat(#{$columns}, 1fr);
+  gap: $gap;
+  margin: 0 $margin;
 }
 
-// @media (max-width: 768px) {
-//     .container {
-//       max-width: 98%;
-//       padding: 0;
-//     }
-// }
-
-.row {
-    display: flex;
-    flex-flow: row wrap;
-}
-
-.column {
-  display: flex;
-  flex-direction: column;
-}
-
-// gaps
-
-@each $key, $val in $grid-gaps {
-    .gap-#{$key} > * {
-        margin: $val;
-    }
-}
-
-// columns
-
-@include xs {
-  @for $i from 1 through $grid-columns {
-    .col-#{$i}-xs {
-      box-sizing: border-box;
-      flex-grow: 0;
-      width: math.div($i * 100%, $grid-columns);
-      padding: 0 12px;
-    }
+@mixin apply-grid($breakpoint) {
+  @media screen and (min-width: map-get($breakpoints, $breakpoint)) {
+    @include generate-grid(map-get($grid-configurations, $breakpoint)...);
   }
 }
 
-@include sm {
-  @for $i from 1 through $grid-columns {
-    .col-#{$i}-sm {
-      box-sizing: border-box;
-      flex-grow: 0;
-      width: math.div($i * 100%, $grid-columns);
-      padding: 0 12px;
+.grid-container {
+
+  @include apply-grid("xs");
+  @include apply-grid("sm");
+  @include apply-grid("md");
+  @include apply-grid("mg");
+  @include apply-grid("lg");
+  @include apply-grid("xl");
+
+  .col {
+
+    @for $i from 1 through 12 {
+      &.col-span-#{$i} {
+        grid-column-end: span #{$i};
+      }
+    }
+
+    @for $i from 1 through 12 {
+      &.col-start-#{$i} {
+        grid-column-start: #{$i};
+      }
+    }
+
+    @each $breakpoint, $config in $grid-configurations {
+      $columns: map-get($config, "columns");
+      $gap: map-get($config, "gap");
+      $margin: map-get($config, "margin");
+
+      &.col-extra-width {
+        @media screen and (min-width: map-get($breakpoints, $breakpoint)) {
+          margin-right: -#{$gap};
+          width: calc(100% + #{$gap});
+        }
+      }
+
+      &.col-extra-start {
+        @media screen and (min-width: map-get($breakpoints, $breakpoint)) {
+          margin-left: calc(-1 * #{$gap});
+        }
+      }
     }
   }
-}
 
-@include md {
-  @for $i from 1 through $grid-columns {
-    .col-#{$i}-md {
-      box-sizing: border-box;
-      flex-grow: 0;
-      width: math.div($i * 100%, $grid-columns);
-      padding: 0 12px;
-    }
-  }
-}
-
-@include lg {
-  @for $i from 1 through $grid-columns {
-    .col-#{$i}-lg {
-      box-sizing: border-box;
-      flex-grow: 0;
-      width: math.div($i * 100%, $grid-columns);
-      padding: 0 12px;
-    }
-  }
-}
-
-@include xl {
-  @for $i from 1 through $grid-columns {
-    .col-#{$i}-xl {
-      box-sizing: border-box;
-      flex-grow: 0;
-      width: math.div($i * 100%, $grid-columns);
-      padding: 0 12px;
-    }
-  }
-}
-
-// align classes
-
-.page-center {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
 }

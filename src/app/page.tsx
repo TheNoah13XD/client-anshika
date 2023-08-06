@@ -1,4 +1,5 @@
-import Button from "@/components/ui/Button"
+import Button from "@/components/ui/Button";
+import { MaterialSymbol } from "material-symbols";
 
 export default function Home() {
   return (
