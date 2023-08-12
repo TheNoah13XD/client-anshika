@@ -60,6 +60,12 @@ $grid-configurations: (
           margin-left: calc(-1 * #{$gap});
         }
       }
+
+      &.col-extra-margin {
+        @media screen and (min-width: map-get($breakpoints, $breakpoint)) {
+          margin-left: calc(-1 * #{$margin});
+        }
+      }
     }
   }
 

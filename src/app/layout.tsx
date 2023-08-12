@@ -7,6 +7,7 @@ import '@/styles/index.css'
 import { Grid, Col } from '@/components/ui/Grid';
 import Nav from '@/components/Nav';
 import Scene from '@/components/Scene';
+import Scenario from '@/components/Scenario';
 
 export const metadata: Metadata = {
 	title: '.anshika - portfolio',
@@ -25,8 +26,11 @@ export default function RootLayout({
 				<Nav />
 				
 				<Scene>
-					<Grid>
-						<Col>
+					<Grid className='h-full'>
+						<Col col='2' extraMargin>
+							<Scenario />
+						</Col>
+						<Col col='5'>
 							{children}
 						</Col>
 					</Grid>

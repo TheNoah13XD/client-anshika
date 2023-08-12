@@ -2,12 +2,13 @@ import { FC } from 'react';
 
 interface SceneProps {
     children: React.ReactNode;
+    className?: string;
 }
 
-const Scene: FC<SceneProps> = ({children}) => {
+const Scene: FC<SceneProps> = ({children, className}) => {
     return(
         <>
-            <div className='scene'>
+            <div className={`scene ${className}`}>
                 {children}
             </div>
         </>
