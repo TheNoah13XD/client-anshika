@@ -9,6 +9,11 @@ import Nav from '@/components/Nav';
 import Scene from '@/components/Scene';
 import Scenario from '@/components/Scenario';
 
+// fontawesome
+import { config } from '@fortawesome/fontawesome-svg-core'
+import '@fortawesome/fontawesome-svg-core/styles.css'
+config.autoAddCss = false
+
 export const metadata: Metadata = {
 	title: '.anshika - portfolio',
 	description: 'developed by .noah',

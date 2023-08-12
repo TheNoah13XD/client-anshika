@@ -1,13 +1,13 @@
 $grid-configurations: (
-  "xs": (columns: 4, gap: 16px, margin: 16px),
-  "sm": (columns: 8, gap: 16px, margin: 32px),
-  "md": (columns: 12, gap: 12px, margin: 32px),
-  "mg": (columns: 12, gap: 24px, margin: 48px),
-  "lg": (columns: 12, gap: 24px, margin: 48px),
-  "xl": (columns: 12, gap: 24px, margin: 48px)
+  "xs": (container-width: 0, columns: 4, gap: 16px, margin: 16px),
+  "sm": (container-width: 600px, columns: 8, gap: 16px, margin: 32px),
+  "md": (container-width: 905px, columns: 12, gap: 12px, margin: 32px),
+  "mg": (container-width: 1240px, columns: 12, gap: 24px, margin: 48px),
+  "lg": (container-width: 1440px, columns: 12, gap: 24px, margin: 48px),
+  "xl": (container-width: 1920px, columns: 12, gap: 24px, margin: 48px)
 );
 
-@mixin generate-grid($columns, $gap, $margin) {
+@mixin generate-grid($container-width, $columns, $gap, $margin) {
   display: grid;
   grid-template-columns: repeat(#{$columns}, 1fr);
   gap: $gap;
@@ -69,4 +69,30 @@ $grid-configurations: (
     }
   }
 
+}
+
+@each $breakpoint, $config in $grid-configurations {
+  $columns: map-get($config, "columns");
+  $gap: map-get($config, "gap");
+  $margin: map-get($config, "margin");
+  $container-width: map-get($config, "container-width");
+
+  .column-width {
+    @media screen and (min-width: map-get($breakpoints, $breakpoint)) {
+      width: ($container-width - ($margin * 2) - ($gap * ($columns - 1))) / $columns;
+    }
+  }
+
+  .gap {
+    @media screen and (min-width: map-get($breakpoints, $breakpoint)) {
+      margin-left: $gap;
+    }
+  }
+
+  .margin {
+    @media screen and (min-width: map-get($breakpoints, $breakpoint)) {
+      margin-left: $margin;
+    }
+  }
+  
 }
