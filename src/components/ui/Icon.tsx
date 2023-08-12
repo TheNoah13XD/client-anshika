@@ -3,7 +3,7 @@ import { MaterialSymbol } from "material-symbols";
 
 interface IconProps {
     type?: 'outlined' | 'rounded' | 'sharp';
-    icon: MaterialSymbol;
+    icon?: MaterialSymbol;
     className?: string;
 }
 
