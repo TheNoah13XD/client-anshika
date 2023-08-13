@@ -15,7 +15,7 @@ const Scenario: FC<ScenarioProps> = ({ className }) => {
         <>
             <div className={`scenario` + (className ? ` ${className}` : '')}>
                 <div className='display-f flex-column margin'>
-                    <Image src='/anshika.png' alt='logo' width={124} height={124} />
+                    <Image src='/anshika.png' alt='logo' width={124} height={124} className='unselectable' />
                     <div className='socials'>
                         <Link href="#" className='on-surface-text'><FontAwesomeIcon icon={faInstagram} /></Link>
                         <Link href="#" className='on-surface-text'><FontAwesomeIcon icon={faTwitter} /></Link>

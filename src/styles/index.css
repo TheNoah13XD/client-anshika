@@ -1,101 +1,13 @@
+@import url("https://fonts.googleapis.com/css?family=Product+Sans:100,300,400,500,700,900");
+@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;700;800&display=swap");
 @import url(./tokens/tokens.css);
 @import url(./tokens/theme.light.css) (prefers-color-scheme: light);
 @import url(./tokens/theme.dark.css) (prefers-color-scheme: dark);
-@font-face {
-  font-family: "Google Sans Display";
-  src: url("/fonts/GoogleSansDisplayRegular.woff2") format("woff2");
-  font-style: normal;
-  font-weight: 400;
-}
-@font-face {
-  font-family: "Google Sans Display";
-  src: url("/fonts/GoogleSansDisplayMedium.woff2") format("woff2");
-  font-style: normal;
-  font-weight: 500;
-}
-@font-face {
-  font-family: "Google Sans Display";
-  src: url("/fonts/GoogleSansDisplayBold.woff2") format("woff2");
-  font-style: normal;
-  font-weight: 700;
-}
-@font-face {
-  font-family: "Product Sans Black";
-  src: url("/fonts/ProductSansBlack.woff2") format("woff2");
-  font-style: normal;
-  font-weight: 900;
-}
-@font-face {
-  font-family: "Roboto";
-  src: url("/fonts/Roboto-Regular.woff2") format("woff2");
-  font-style: normal;
-  font-weight: 400;
-}
-@font-face {
-  font-family: "Roboto";
-  src: url("/fonts/Roboto-Medium.woff2") format("woff2");
-  font-style: normal;
-  font-weight: 500;
-}
-@font-face {
-  font-family: "Roboto";
-  src: url("/fonts/Roboto-Bold.woff2") format("woff2");
-  font-style: normal;
-  font-weight: 700;
-}
-@font-face {
-  font-family: "spotify-circular";
-  src: url("/fonts/SpotifyCircular.woff2") format("woff2");
-  font-style: normal;
-  font-weight: 400;
-}
-@font-face {
-  font-family: "spotify-circular";
-  src: url("/fonts/SpotifyCircularBlack.woff2") format("woff2");
-  font-style: normal;
-  font-weight: 500;
-}
-@font-face {
-  font-family: "spotify-circular";
-  src: url("/fonts/SpotifyCircularBold.woff2") format("woff2");
-  font-style: normal;
-  font-weight: 700;
-}
-@font-face {
-  font-family: "Helvetica Neue";
-  src: url("/fonts/HelveticaNeue-Regular.woff2") format("woff2");
-  font-style: normal;
-  font-weight: 400;
-}
-@font-face {
-  font-family: "Helvetica Neue";
-  src: url("/fonts/HelveticaNeue-Medium.woff2") format("woff2");
-  font-style: normal;
-  font-weight: 700;
-}
-@font-face {
-  font-family: "Source Code Pro";
-  src: url("/fonts/SourceCodeProRegular.woff2") format("woff2");
-  font-style: normal;
-  font-weight: 400;
-}
-@font-face {
-  font-family: "Source Code Pro";
-  src: url("/fonts/SourceCodeProMedium.woff2") format("woff2");
-  font-style: normal;
-  font-weight: 500;
-}
-@font-face {
-  font-family: "Source Code Pro";
-  src: url("/fonts/SourceCodeProBold.woff2") format("woff2");
-  font-style: normal;
-  font-weight: 700;
-}
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Google Sans Display", "Roboto", "spotify-circular", "Helvetica Neue", helvetica, arial, Hiragino Kaku Gothic Pro, Meiryo, MS Gothic, sans-serif;
+  font-family: "Product Sans", sans-serif;
   letter-spacing: -0.6px;
   scroll-behavior: smooth !important;
 }
@@ -2592,15 +2504,11 @@ template {
 }
 
 .font-f-base {
-  font-family: "Google Sans Display", "Roboto", "spotify-circular", "Helvetica Neue", helvetica, arial, Hiragino Kaku Gothic Pro, Meiryo, MS Gothic, sans-serif;
+  font-family: "Product Sans", sans-serif;
 }
 
-.font-f-alt {
-  font-family: "Roboto", sans-serif;
-}
-
-.font-f-code {
-  font-family: "Source Code Pro", monospace;
+.font-f-mono {
+  font-family: "JetBrains Mono", monospace;
 }
 
 .font-body-small {
@@ -127857,19 +127765,13 @@ template {
 
 @media (min-width: 0) {
   .xs-font-f-base {
-    font-family: "Google Sans Display", "Roboto", "spotify-circular", "Helvetica Neue", helvetica, arial, Hiragino Kaku Gothic Pro, Meiryo, MS Gothic, sans-serif;
+    font-family: "Product Sans", sans-serif;
   }
 }
 
 @media (min-width: 0) {
-  .xs-font-f-alt {
-    font-family: "Roboto", sans-serif;
-  }
-}
-
-@media (min-width: 0) {
-  .xs-font-f-code {
-    font-family: "Source Code Pro", monospace;
+  .xs-font-f-mono {
+    font-family: "JetBrains Mono", monospace;
   }
 }
 
@@ -130329,19 +130231,13 @@ template {
 
 @media (min-width: 600px) {
   .sm-font-f-base {
-    font-family: "Google Sans Display", "Roboto", "spotify-circular", "Helvetica Neue", helvetica, arial, Hiragino Kaku Gothic Pro, Meiryo, MS Gothic, sans-serif;
+    font-family: "Product Sans", sans-serif;
   }
 }
 
 @media (min-width: 600px) {
-  .sm-font-f-alt {
-    font-family: "Roboto", sans-serif;
-  }
-}
-
-@media (min-width: 600px) {
-  .sm-font-f-code {
-    font-family: "Source Code Pro", monospace;
+  .sm-font-f-mono {
+    font-family: "JetBrains Mono", monospace;
   }
 }
 
@@ -132801,19 +132697,13 @@ template {
 
 @media (min-width: 905px) {
   .md-font-f-base {
-    font-family: "Google Sans Display", "Roboto", "spotify-circular", "Helvetica Neue", helvetica, arial, Hiragino Kaku Gothic Pro, Meiryo, MS Gothic, sans-serif;
+    font-family: "Product Sans", sans-serif;
   }
 }
 
 @media (min-width: 905px) {
-  .md-font-f-alt {
-    font-family: "Roboto", sans-serif;
-  }
-}
-
-@media (min-width: 905px) {
-  .md-font-f-code {
-    font-family: "Source Code Pro", monospace;
+  .md-font-f-mono {
+    font-family: "JetBrains Mono", monospace;
   }
 }
 
@@ -135273,19 +135163,13 @@ template {
 
 @media (min-width: 1240px) {
   .mg-font-f-base {
-    font-family: "Google Sans Display", "Roboto", "spotify-circular", "Helvetica Neue", helvetica, arial, Hiragino Kaku Gothic Pro, Meiryo, MS Gothic, sans-serif;
+    font-family: "Product Sans", sans-serif;
   }
 }
 
 @media (min-width: 1240px) {
-  .mg-font-f-alt {
-    font-family: "Roboto", sans-serif;
-  }
-}
-
-@media (min-width: 1240px) {
-  .mg-font-f-code {
-    font-family: "Source Code Pro", monospace;
+  .mg-font-f-mono {
+    font-family: "JetBrains Mono", monospace;
   }
 }
 
@@ -137745,19 +137629,13 @@ template {
 
 @media (min-width: 1440px) {
   .lg-font-f-base {
-    font-family: "Google Sans Display", "Roboto", "spotify-circular", "Helvetica Neue", helvetica, arial, Hiragino Kaku Gothic Pro, Meiryo, MS Gothic, sans-serif;
+    font-family: "Product Sans", sans-serif;
   }
 }
 
 @media (min-width: 1440px) {
-  .lg-font-f-alt {
-    font-family: "Roboto", sans-serif;
-  }
-}
-
-@media (min-width: 1440px) {
-  .lg-font-f-code {
-    font-family: "Source Code Pro", monospace;
+  .lg-font-f-mono {
+    font-family: "JetBrains Mono", monospace;
   }
 }
 
@@ -140217,19 +140095,13 @@ template {
 
 @media (min-width: 1920px) {
   .xl-font-f-base {
-    font-family: "Google Sans Display", "Roboto", "spotify-circular", "Helvetica Neue", helvetica, arial, Hiragino Kaku Gothic Pro, Meiryo, MS Gothic, sans-serif;
+    font-family: "Product Sans", sans-serif;
   }
 }
 
 @media (min-width: 1920px) {
-  .xl-font-f-alt {
-    font-family: "Roboto", sans-serif;
-  }
-}
-
-@media (min-width: 1920px) {
-  .xl-font-f-code {
-    font-family: "Source Code Pro", monospace;
+  .xl-font-f-mono {
+    font-family: "JetBrains Mono", monospace;
   }
 }
 
