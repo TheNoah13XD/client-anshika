@@ -1,5 +1,8 @@
+'use client'
+
 import Image from 'next/image';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { FC } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faInstagram, faTwitter } from '@fortawesome/free-brands-svg-icons'
@@ -10,6 +13,17 @@ interface ScenarioProps {
 }
 
 const Scenario: FC<ScenarioProps> = ({ className }) => {
+
+    const pathname = usePathname();
+
+    const contextTexts: { [key: string]: string } = {
+        '/': 'It\'s hot!',
+        '/work': 'Portfolio',
+        '/human': 'Oh, Me!',
+        '/contact': 'Hyped?'
+    }
+
+    const contextText = contextTexts[pathname] || 'It\'s hot!';
 
     return(
         <>
@@ -23,7 +37,7 @@ const Scenario: FC<ScenarioProps> = ({ className }) => {
                     </div>
                 </div>
                 <div className="context margin">
-                    <p className='context-text'>It's hot!</p>
+                    <p className='context-text'>{contextText}</p>
                 </div>
             </div>
         </>
