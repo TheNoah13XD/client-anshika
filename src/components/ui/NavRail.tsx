@@ -4,8 +4,9 @@ import React from 'react';
 import { FC } from 'react';
 import { usePathname } from 'next/navigation';
 import Link from 'next/link';
-
 import { MaterialSymbol } from 'material-symbols';
+
+// Components
 import Icon from './Icon';
 
 interface NavRailProps {

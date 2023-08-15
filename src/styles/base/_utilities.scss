@@ -187,7 +187,11 @@ $utilities: (
       "5": $base-padding * 5,
       "6": $base-padding * 6,
       "7": $base-padding * 7,
-      "8": $base-padding * 8
+      "8": $base-padding * 8,
+      "9": $base-padding * 9,
+      "10": $base-padding * 10,
+      "11": $base-padding * 11,
+      "12": $base-padding * 12
     ),
   ),
   "padding-left": (
@@ -201,7 +205,11 @@ $utilities: (
       "5": $base-padding * 5,
       "6": $base-padding * 6,
       "7": $base-padding * 7,
-      "8": $base-padding * 8
+      "8": $base-padding * 8,
+      "9": $base-padding * 9,
+      "10": $base-padding * 10,
+      "11": $base-padding * 11,
+      "12": $base-padding * 12
     ),
   ),
   "padding-right": (
@@ -215,7 +223,11 @@ $utilities: (
       "5": $base-padding * 5,
       "6": $base-padding * 6,
       "7": $base-padding * 7,
-      "8": $base-padding * 8
+      "8": $base-padding * 8,
+      "9": $base-padding * 9,
+      "10": $base-padding * 10,
+      "11": $base-padding * 11,
+      "12": $base-padding * 12
     ),
   ),
   "padding-top": (
@@ -229,7 +241,11 @@ $utilities: (
       "5": $base-padding * 5,
       "6": $base-padding * 6,
       "7": $base-padding * 7,
-      "8": $base-padding * 8
+      "8": $base-padding * 8,
+      "9": $base-padding * 9,
+      "10": $base-padding * 10,
+      "11": $base-padding * 11,
+      "12": $base-padding * 12
     ),
   ),
   "padding-bottom": (
@@ -243,7 +259,11 @@ $utilities: (
       "5": $base-padding * 5,
       "6": $base-padding * 6,
       "7": $base-padding * 7,
-      "8": $base-padding * 8
+      "8": $base-padding * 8,
+      "9": $base-padding * 9,
+      "10": $base-padding * 10,
+      "11": $base-padding * 11,
+      "12": $base-padding * 12
     ),
   ),
   "margin": (
@@ -258,7 +278,11 @@ $utilities: (
       "5": $base-margin * 5,
       "6": $base-margin * 6,
       "7": $base-margin * 7,
-      "8": $base-margin * 8
+      "8": $base-margin * 8,
+      "9": $base-margin * 9,
+      "10": $base-margin * 10,
+      "11": $base-margin * 11,
+      "12": $base-margin * 12
     ),
   ),
   "margin-left": (
@@ -273,7 +297,11 @@ $utilities: (
       "5": $base-margin * 5,
       "6": $base-margin * 6,
       "7": $base-margin * 7,
-      "8": $base-margin * 8
+      "8": $base-margin * 8,
+      "9": $base-margin * 9,
+      "10": $base-margin * 10,
+      "11": $base-margin * 11,
+      "12": $base-margin * 12
     ),
   ),
   "margin-right": (
@@ -288,7 +316,11 @@ $utilities: (
       "5": $base-margin * 5,
       "6": $base-margin * 6,
       "7": $base-margin * 7,
-      "8": $base-margin * 8
+      "8": $base-margin * 8,
+      "9": $base-margin * 9,
+      "10": $base-margin * 10,
+      "11": $base-margin * 11,
+      "12": $base-margin * 12
     ),
   ),
   "margin-top": (
@@ -303,7 +335,11 @@ $utilities: (
       "5": $base-margin * 5,
       "6": $base-margin * 6,
       "7": $base-margin * 7,
-      "8": $base-margin * 8
+      "8": $base-margin * 8,
+      "9": $base-margin * 9,
+      "10": $base-margin * 10,
+      "11": $base-margin * 11,
+      "12": $base-margin * 12
     ),
   ),
   "margin-bottom": (
@@ -318,7 +354,11 @@ $utilities: (
       "5": $base-margin * 5,
       "6": $base-margin * 6,
       "7": $base-margin * 7,
-      "8": $base-margin * 8
+      "8": $base-margin * 8,
+      "9": $base-margin * 9,
+      "10": $base-margin * 10,
+      "11": $base-margin * 11,
+      "12": $base-margin * 12
     ),
   ),
 
@@ -526,7 +566,8 @@ $utilities: (
     "values": (
       "reg": $base-fw,
       "md": $medium-fw,
-      "bold": $bold-fw
+      "bold": $bold-fw,
+      "black": $black-fw
     )
   ),
   "letter-spacing": (
@@ -758,12 +799,16 @@ $base-values: (
   "0": 0,
   "1": 1,
   "2": 2,
-  "3": 4,
-  "4": 6,
-  "5": 8,
-  "6": 10,
-  "7": 12,
-  "8": 14,
+  "3": 3,
+  "4": 4,
+  "5": 5,
+  "6": 6,
+  "7": 7,
+  "8": 8,
+  "9": 9,
+  "10": 10,
+  "11": 11,
+  "12": 12
 );
 
 @each $k, $v in $base-values {

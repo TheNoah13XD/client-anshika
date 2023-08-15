@@ -30,16 +30,17 @@ export default function RootLayout({
 
 				<Nav />
 				
-				<Scene>
-					<Grid className='h-full'>
-						<Col col='2' extraMargin>
-							<Scenario />
-						</Col>
-						<Col col='5'>
+				
+				<Grid className='w-full'>
+					<Col col='2' extraLMargin>
+						<Scenario />
+					</Col>
+					<Col col='10' extraLMargin className='z-neg-1 overflow-y-h'>
+						<Scene>
 							{children}
-						</Col>
-					</Grid>
-				</Scene>
+						</Scene>
+					</Col>
+				</Grid>
 
 			</body>
 		</html>

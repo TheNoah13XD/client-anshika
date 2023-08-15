@@ -1,5 +1,7 @@
 import { FC } from "react";
 import { MaterialSymbol } from "material-symbols";
+
+// components
 import Icon from "./Icon";
 
 interface ButtonProps {

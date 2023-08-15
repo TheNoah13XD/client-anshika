@@ -4,7 +4,8 @@ $grid-configurations: (
   "md": (container-width: 905px, columns: 12, gap: 12px, margin: 32px),
   "mg": (container-width: 1240px, columns: 12, gap: 24px, margin: 48px),
   "lg": (container-width: 1440px, columns: 12, gap: 24px, margin: 48px),
-  "xl": (container-width: 1920px, columns: 12, gap: 24px, margin: 48px)
+  "xl": (container-width: 1920px, columns: 12, gap: 24px, margin: 48px),
+  "xxl": (container-width: 2560px, columns: 12, gap: 24px, margin: 48px)
 );
 
 @mixin generate-grid($container-width, $columns, $gap, $margin) {
@@ -28,25 +29,24 @@ $grid-configurations: (
   @include apply-grid("mg");
   @include apply-grid("lg");
   @include apply-grid("xl");
+  @include apply-grid("xxl");
 
   .col {
-
-    @for $i from 1 through 12 {
-      &.col-span-#{$i} {
-        grid-column-end: span #{$i};
-      }
-    }
-
-    @for $i from 1 through 12 {
-      &.col-start-#{$i} {
-        grid-column-start: #{$i};
-      }
-    }
 
     @each $breakpoint, $config in $grid-configurations {
       $columns: map-get($config, "columns");
       $gap: map-get($config, "gap");
       $margin: map-get($config, "margin");
+
+      @for $i from 1 through $columns {
+        &.col-span-#{$i} {
+          grid-column-end: span #{$i};
+        }
+  
+        &.col-start-#{$i} {
+          grid-column-start: #{$i};
+        }
+      }
 
       &.col-extra-width {
         @media screen and (min-width: map-get($breakpoints, $breakpoint)) {
@@ -61,11 +61,24 @@ $grid-configurations: (
         }
       }
 
-      &.col-extra-margin {
+      &.col-extra-end {
+        @media screen and (min-width: map-get($breakpoints, $breakpoint)) {
+          margin-right: calc(-1 * #{$gap});
+        }
+      }
+
+      &.col-extra-start-margin {
         @media screen and (min-width: map-get($breakpoints, $breakpoint)) {
           margin-left: calc(-1 * #{$margin});
         }
       }
+
+      &.col-extra-end-margin {
+        @media screen and (min-width: map-get($breakpoints, $breakpoint)) {
+          margin-right: calc(-1 * #{$margin});
+        }
+      }
+
     }
   }
 
@@ -77,22 +90,23 @@ $grid-configurations: (
   $margin: map-get($config, "margin");
   $container-width: map-get($config, "container-width");
 
-  .column-width {
-    @media screen and (min-width: map-get($breakpoints, $breakpoint)) {
-      width: ($container-width - ($margin * 2) - ($gap * ($columns - 1))) / $columns;
-    }
-  }
+  $col: ((($container-width - 72px) - ($margin * 2) - ($gap * ($columns - 1))) / $columns);
 
-  .gap {
-    @media screen and (min-width: map-get($breakpoints, $breakpoint)) {
-      margin-left: $gap;
-    }
-  }
+  @media screen and (min-width: map-get($breakpoints, $breakpoint)) {
 
-  .margin {
-    @media screen and (min-width: map-get($breakpoints, $breakpoint)) {
-      margin-left: $margin;
-    }
-  }
+    @for $i from 1 through $columns {
+      .grid-column-width-#{$i} {
+        width: $col * $i;
+      }
   
+      .grid-gap-#{$i} {
+        margin-left: $gap * $i;
+      }
+  
+      .grid-margin-#{$i} {
+        margin-left: $margin * $i;
+      }
+    }
+
+  }
 }

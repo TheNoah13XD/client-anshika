@@ -11,7 +11,9 @@ interface ColProps {
     start?: string;
     extraWidth?: boolean;
     extraStart?: boolean;
-    extraMargin?: boolean;
+    extraEnd?: boolean;
+    extraLMargin?: boolean;
+    extraRMargin?: boolean;
     className?: string;
 }
 
@@ -23,14 +25,16 @@ const Grid: FC<GridProps> = ({ children, className }) => {
     )
 }
 
-const Col: FC<ColProps> = ({ children, col, start, extraWidth, extraStart, extraMargin, className }) => {
+const Col: FC<ColProps> = ({ children, col, start, extraWidth, extraStart, extraEnd, extraLMargin, extraRMargin, className }) => {
 
     const classNames = [
         col ? `col-span-${col}` : '',
         start ? `col-start-${start}` : '',
         extraWidth ? 'col-extra-width' : '',
         extraStart ? 'col-extra-start' : '',
-        extraMargin ? 'col-extra-margin' : '',
+        extraEnd ? 'col-extra-end' : '',
+        extraLMargin ? 'col-extra-start-margin' : '',
+        extraRMargin ? 'col-extra-end-margin' : '',
     ].join(' ');
 
     return (
