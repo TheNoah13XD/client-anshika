@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 // components
 import IconButton from "@/components/ui/IconButton";
 
@@ -10,8 +12,8 @@ export default function Home() {
 					<p className="index-detail">Embark on a captivating journey where fashion meets art, showcasing elegance, creativity, and the embodiment of individuality.</p>
 				</div>
 				<div className="index-thumbnail">
-					<img src="/index-thumbnail.png" alt="index-thumbnail" className="thumbnail" />
-					<IconButton icon="north_east" className="index-btn" />
+					<img src="/index-thumbnail.png" alt="index-thumbnail" className="thumbnail unselectable" />
+					<Link href="#" className="index-btn"><IconButton icon="north_east" /></Link>
 				</div>
 			</div>
 		</>

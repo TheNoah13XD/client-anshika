@@ -13,14 +13,12 @@ interface IconButtonProps {
 
 const IconButton: FC<IconButtonProps> = ({ disabled, className, type = 'filled', icon }) => {
     return (
-        <div className={className}>
             <button
-                className={`${type}-iconbtn`}
+                className={`${type}-iconbtn pointer` + (className ? ` ${className}` : '')}
                 disabled={disabled}
             >
                 {icon && <Icon className="icon" icon={icon} />}
             </button>
-        </div>
     )
 }
 

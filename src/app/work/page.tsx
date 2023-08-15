@@ -1,10 +1,6 @@
 import { FC } from "react";
 
-interface WorkPageProps {
-
-}
-
-const WorkPage: FC<WorkPageProps> = ({}) => {
+const WorkPage: FC = ({}) => {
     return (
         <>
             

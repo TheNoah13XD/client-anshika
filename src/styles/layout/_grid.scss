@@ -90,7 +90,7 @@ $grid-configurations: (
   $margin: map-get($config, "margin");
   $container-width: map-get($config, "container-width");
 
-  $col: ((($container-width - 72px) - ($margin * 2) - ($gap * ($columns - 1))) / $columns);
+  $col: math.div((($container-width - 72px) - ($margin * 2) - ($gap * ($columns - 1))), $columns);
 
   @media screen and (min-width: map-get($breakpoints, $breakpoint)) {
 

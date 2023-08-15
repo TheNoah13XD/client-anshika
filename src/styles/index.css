@@ -146571,17 +146571,16 @@ template {
   color: var(--md-sys-color-on-primary);
 }
 
-.scene {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  padding-left: 48px;
-  border-radius: 28px;
-  background-color: var(--md-sys-color-surface);
-  z-index: 1;
-}
-
 @media screen and (min-width: 0) {
+  .scene {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding-left: 16px;
+    border-radius: 28px;
+    background-color: var(--md-sys-color-surface);
+    z-index: 1;
+  }
   .index-headline {
     width: -126px;
     font-size: 65px;
@@ -146625,6 +146624,15 @@ template {
   }
 }
 @media screen and (min-width: 600px) {
+  .scene {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding-left: 32px;
+    border-radius: 28px;
+    background-color: var(--md-sys-color-surface);
+    z-index: 1;
+  }
   .index-headline {
     width: 284px;
     font-size: 65px;
@@ -146668,6 +146676,15 @@ template {
   }
 }
 @media screen and (min-width: 905px) {
+  .scene {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding-left: 32px;
+    border-radius: 28px;
+    background-color: var(--md-sys-color-surface);
+    z-index: 1;
+  }
   .index-headline {
     width: 313.4166666667px;
     font-size: 65px;
@@ -146711,6 +146728,15 @@ template {
   }
 }
 @media screen and (min-width: 1240px) {
+  .scene {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding-left: 48px;
+    border-radius: 28px;
+    background-color: var(--md-sys-color-surface);
+    z-index: 1;
+  }
   .index-headline {
     width: 432.6666666667px;
     font-size: 65px;
@@ -146754,6 +146780,15 @@ template {
   }
 }
 @media screen and (min-width: 1440px) {
+  .scene {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding-left: 48px;
+    border-radius: 28px;
+    background-color: var(--md-sys-color-surface);
+    z-index: 1;
+  }
   .index-headline {
     width: 516px;
     font-size: 65px;
@@ -146797,6 +146832,15 @@ template {
   }
 }
 @media screen and (min-width: 1920px) {
+  .scene {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding-left: 48px;
+    border-radius: 28px;
+    background-color: var(--md-sys-color-surface);
+    z-index: 1;
+  }
   .index-headline {
     width: 716px;
     font-size: 65px;
@@ -146840,6 +146884,15 @@ template {
   }
 }
 @media screen and (min-width: 2560px) {
+  .scene {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding-left: 48px;
+    border-radius: 28px;
+    background-color: var(--md-sys-color-surface);
+    z-index: 1;
+  }
   .index-headline {
     width: 982.6666666667px;
     font-size: 65px;
