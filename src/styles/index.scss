@@ -159,6 +159,9 @@
             background-color: var(--md-ref-palette-primary95);
             overflow: hidden;
             .thumbnail {
+                position: absolute;
+                top: 0;
+                left: 0;
                 width: 100%;
                 height: 100%;
                 object-fit: cover;
@@ -172,6 +175,107 @@
                     background-color: var(--md-sys-color-primary-container);
                     .icon {
                         color: var(--md-sys-color-on-primary-container);
+                    }
+                }
+            }
+        }
+
+        .work-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            width: 100%;
+            height: 100%;
+            padding: 0 $col;
+            & > *:not(:first-child) {
+                margin-top: $base-margin * 25;
+            }
+            .row {
+                display: flex;
+                justify-content: space-between;
+                align-items: flex-start;
+                .element-1 {
+                    position: relative;
+                    display: flex;
+                    flex-direction: column;
+                    img {
+                        width: $col + $gap * 2;
+                    }
+                    .filled-iconbtn {
+                        margin-left: -$gap;
+                    }
+                    .column {
+                        display: flex;
+                        justify-content: center;
+                        width: $col + $gap *2;
+                    }
+                }
+                .element-2 {
+                    position: relative;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    .definition-1 {
+                        display: flex;
+                        align-items: flex-start;
+                        font-size: $type-display-medium;
+                        font-weight: $black-fw;
+                        img {
+                            width: $col * 6 + $gap * 6;
+                        }
+                        p {
+                            width: $base-width * 146;
+                            margin-right: $base-width * -146;
+                            letter-spacing: 2px;
+                            line-height: normal;
+                            text-transform: uppercase;
+                            color: var(--md-sys-color-on-primary-container);
+
+                        }
+                    }
+                    .definition-2 {
+                        width: $col * 4 + $gap * 4;
+                        padding: $base-padding * 5 $base-padding * 26;
+                        margin-top: $base-margin * -13;
+                        border-radius: $full-border-radius;
+                        background-color: var(--md-sys-color-secondary-container);
+                        p {
+                            font-size: $type-title-medium;
+                            font-weight: $bold-fw;
+                            text-align: center;
+                            color: var(--md-sys-color-on-secondary-container);
+                        }
+                    }
+                }
+                .element-3 {
+                    position: relative;
+                    display: flex;
+                    img {
+                        width: $col * 3 + $gap * 3;
+                    }
+                    .filled-iconbtn {
+                        margin-left: $gap * -2;
+                    }
+                }
+                .element-4 {
+                    position: relative;
+                    display: flex;
+                    align-items: flex-end;
+                    img {
+                        width: $col * 3 + $gap * 3;
+                    }
+                    .filled-iconbtn {
+                        margin-right: $gap * -2;
+                        z-index: 2;
+                    }
+                }
+                .filled-iconbtn {
+                    width: $base-width * 17;
+                    height: $base-height * 17;
+                    .icon {
+                        width: $type-display-small !important;
+                        height: $type-display-small !important;
+                        font-size: $type-display-small !important;
                     }
                 }
             }
