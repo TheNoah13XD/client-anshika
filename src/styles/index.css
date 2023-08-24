@@ -146662,17 +146662,29 @@ template {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: space-between;
+    height: 100%;
   }
   .work-container .row .element-2 .definition-1 {
+    position: relative;
+    width: -132px;
     display: flex;
     align-items: flex-start;
     font-size: 45px;
     font-weight: 900;
   }
   .work-container .row .element-2 .definition-1 img {
+    position: absolute;
     width: -132px;
+    z-index: -1;
+  }
+  .work-container .row .element-2 .definition-1 .filled-iconbtn {
+    position: absolute;
+    right: 0;
+    margin: 16px 16px;
   }
   .work-container .row .element-2 .definition-1 p {
+    font-size: 40px;
     width: 584px;
     margin-right: -584px;
     letter-spacing: 2px;
@@ -146683,13 +146695,14 @@ template {
   .work-container .row .element-2 .definition-2 {
     width: -88px;
     padding: 20px 104px;
-    margin-top: -52px;
+    margin-top: -40px;
     border-radius: 999px;
     background-color: var(--md-sys-color-secondary-container);
   }
   .work-container .row .element-2 .definition-2 p {
     font-size: 16px;
     font-weight: 700;
+    line-height: normal;
     text-align: center;
     color: var(--md-sys-color-on-secondary-container);
   }
@@ -146816,17 +146829,29 @@ template {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: space-between;
+    height: 100%;
   }
   .work-container .row .element-2 .definition-1 {
+    position: relative;
+    width: 360px;
     display: flex;
     align-items: flex-start;
     font-size: 45px;
     font-weight: 900;
   }
   .work-container .row .element-2 .definition-1 img {
+    position: absolute;
     width: 360px;
+    z-index: -1;
+  }
+  .work-container .row .element-2 .definition-1 .filled-iconbtn {
+    position: absolute;
+    right: 0;
+    margin: 16px 16px;
   }
   .work-container .row .element-2 .definition-1 p {
+    font-size: 40px;
     width: 584px;
     margin-right: -584px;
     letter-spacing: 2px;
@@ -146837,13 +146862,14 @@ template {
   .work-container .row .element-2 .definition-2 {
     width: 240px;
     padding: 20px 104px;
-    margin-top: -52px;
+    margin-top: -40px;
     border-radius: 999px;
     background-color: var(--md-sys-color-secondary-container);
   }
   .work-container .row .element-2 .definition-2 p {
     font-size: 16px;
     font-weight: 700;
+    line-height: normal;
     text-align: center;
     color: var(--md-sys-color-on-secondary-container);
   }
@@ -146970,17 +146996,29 @@ template {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: space-between;
+    height: 100%;
   }
   .work-container .row .element-2 .definition-1 {
+    position: relative;
+    width: 390.5px;
     display: flex;
     align-items: flex-start;
     font-size: 45px;
     font-weight: 900;
   }
   .work-container .row .element-2 .definition-1 img {
+    position: absolute;
     width: 390.5px;
+    z-index: -1;
+  }
+  .work-container .row .element-2 .definition-1 .filled-iconbtn {
+    position: absolute;
+    right: 0;
+    margin: 16px 12px;
   }
   .work-container .row .element-2 .definition-1 p {
+    font-size: 40px;
     width: 584px;
     margin-right: -584px;
     letter-spacing: 2px;
@@ -146991,13 +147029,14 @@ template {
   .work-container .row .element-2 .definition-2 {
     width: 260.3333333333px;
     padding: 20px 104px;
-    margin-top: -52px;
+    margin-top: -40px;
     border-radius: 999px;
     background-color: var(--md-sys-color-secondary-container);
   }
   .work-container .row .element-2 .definition-2 p {
     font-size: 16px;
     font-weight: 700;
+    line-height: normal;
     text-align: center;
     color: var(--md-sys-color-on-secondary-container);
   }
@@ -147124,17 +147163,29 @@ template {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: space-between;
+    height: 100%;
   }
   .work-container .row .element-2 .definition-1 {
+    position: relative;
+    width: 548px;
     display: flex;
     align-items: flex-start;
     font-size: 45px;
     font-weight: 900;
   }
   .work-container .row .element-2 .definition-1 img {
+    position: absolute;
     width: 548px;
+    z-index: -1;
+  }
+  .work-container .row .element-2 .definition-1 .filled-iconbtn {
+    position: absolute;
+    right: 0;
+    margin: 16px 24px;
   }
   .work-container .row .element-2 .definition-1 p {
+    font-size: 40px;
     width: 584px;
     margin-right: -584px;
     letter-spacing: 2px;
@@ -147145,13 +147196,14 @@ template {
   .work-container .row .element-2 .definition-2 {
     width: 365.3333333333px;
     padding: 20px 104px;
-    margin-top: -52px;
+    margin-top: -40px;
     border-radius: 999px;
     background-color: var(--md-sys-color-secondary-container);
   }
   .work-container .row .element-2 .definition-2 p {
     font-size: 16px;
     font-weight: 700;
+    line-height: normal;
     text-align: center;
     color: var(--md-sys-color-on-secondary-container);
   }
@@ -147278,17 +147330,29 @@ template {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: space-between;
+    height: 100%;
   }
   .work-container .row .element-2 .definition-1 {
+    position: relative;
+    width: 648px;
     display: flex;
     align-items: flex-start;
     font-size: 45px;
     font-weight: 900;
   }
   .work-container .row .element-2 .definition-1 img {
+    position: absolute;
     width: 648px;
+    z-index: -1;
+  }
+  .work-container .row .element-2 .definition-1 .filled-iconbtn {
+    position: absolute;
+    right: 0;
+    margin: 16px 24px;
   }
   .work-container .row .element-2 .definition-1 p {
+    font-size: 40px;
     width: 584px;
     margin-right: -584px;
     letter-spacing: 2px;
@@ -147299,13 +147363,14 @@ template {
   .work-container .row .element-2 .definition-2 {
     width: 432px;
     padding: 20px 104px;
-    margin-top: -52px;
+    margin-top: -40px;
     border-radius: 999px;
     background-color: var(--md-sys-color-secondary-container);
   }
   .work-container .row .element-2 .definition-2 p {
     font-size: 16px;
     font-weight: 700;
+    line-height: normal;
     text-align: center;
     color: var(--md-sys-color-on-secondary-container);
   }
@@ -147432,17 +147497,29 @@ template {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: space-between;
+    height: 100%;
   }
   .work-container .row .element-2 .definition-1 {
+    position: relative;
+    width: 888px;
     display: flex;
     align-items: flex-start;
     font-size: 45px;
     font-weight: 900;
   }
   .work-container .row .element-2 .definition-1 img {
+    position: absolute;
     width: 888px;
+    z-index: -1;
+  }
+  .work-container .row .element-2 .definition-1 .filled-iconbtn {
+    position: absolute;
+    right: 0;
+    margin: 16px 24px;
   }
   .work-container .row .element-2 .definition-1 p {
+    font-size: 40px;
     width: 584px;
     margin-right: -584px;
     letter-spacing: 2px;
@@ -147453,13 +147530,14 @@ template {
   .work-container .row .element-2 .definition-2 {
     width: 592px;
     padding: 20px 104px;
-    margin-top: -52px;
+    margin-top: -40px;
     border-radius: 999px;
     background-color: var(--md-sys-color-secondary-container);
   }
   .work-container .row .element-2 .definition-2 p {
     font-size: 16px;
     font-weight: 700;
+    line-height: normal;
     text-align: center;
     color: var(--md-sys-color-on-secondary-container);
   }
@@ -147586,17 +147664,29 @@ template {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: space-between;
+    height: 100%;
   }
   .work-container .row .element-2 .definition-1 {
+    position: relative;
+    width: 1208px;
     display: flex;
     align-items: flex-start;
     font-size: 45px;
     font-weight: 900;
   }
   .work-container .row .element-2 .definition-1 img {
+    position: absolute;
     width: 1208px;
+    z-index: -1;
+  }
+  .work-container .row .element-2 .definition-1 .filled-iconbtn {
+    position: absolute;
+    right: 0;
+    margin: 16px 24px;
   }
   .work-container .row .element-2 .definition-1 p {
+    font-size: 40px;
     width: 584px;
     margin-right: -584px;
     letter-spacing: 2px;
@@ -147607,13 +147697,14 @@ template {
   .work-container .row .element-2 .definition-2 {
     width: 805.3333333333px;
     padding: 20px 104px;
-    margin-top: -52px;
+    margin-top: -40px;
     border-radius: 999px;
     background-color: var(--md-sys-color-secondary-container);
   }
   .work-container .row .element-2 .definition-2 p {
     font-size: 16px;
     font-weight: 700;
+    line-height: normal;
     text-align: center;
     color: var(--md-sys-color-on-secondary-container);
   }

@@ -215,15 +215,27 @@
                     display: flex;
                     flex-direction: column;
                     align-items: center;
+                    justify-content: space-between;
+                    height: 100%;
                     .definition-1 {
+                        position: relative;
+                        width: $col * 6 + $gap * 6;
                         display: flex;
                         align-items: flex-start;
                         font-size: $type-display-medium;
                         font-weight: $black-fw;
                         img {
+                            position: absolute;
                             width: $col * 6 + $gap * 6;
+                            z-index: -1;
+                        }
+                        .filled-iconbtn {
+                            position: absolute;
+                            right: 0;
+                            margin: $base-margin * 4 $gap;
                         }
                         p {
+                            font-size: $base-width * 10;
                             width: $base-width * 146;
                             margin-right: $base-width * -146;
                             letter-spacing: 2px;
@@ -236,12 +248,13 @@
                     .definition-2 {
                         width: $col * 4 + $gap * 4;
                         padding: $base-padding * 5 $base-padding * 26;
-                        margin-top: $base-margin * -13;
+                        margin-top: $base-margin * -10;
                         border-radius: $full-border-radius;
                         background-color: var(--md-sys-color-secondary-container);
                         p {
                             font-size: $type-title-medium;
                             font-weight: $bold-fw;
+                            line-height: normal;
                             text-align: center;
                             color: var(--md-sys-color-on-secondary-container);
                         }
