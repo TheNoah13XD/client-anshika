@@ -3,11 +3,11 @@ import { FC } from "react";
 // components
 import IconButton from "@/components/ui/IconButton";
 
-interface ElementOneProps {
+interface ElementTwoProps {
     className?: string;
 }
 
-const ElementOne: FC<ElementOneProps> = ({ className }) => {
+const ElementTwo: FC<ElementTwoProps> = ({ className }) => {
     return (
         <div className={`element-2` + (className ? ` ${className}` : '')}>
             <div className="definition-1">
@@ -22,4 +22,4 @@ const ElementOne: FC<ElementOneProps> = ({ className }) => {
     )
 }
 
-export default ElementOne;
+export default ElementTwo;

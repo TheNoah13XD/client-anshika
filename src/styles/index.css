@@ -146628,15 +146628,18 @@ template {
   .work-container {
     display: flex;
     flex-direction: column;
+    justify-content: center;
     width: 100%;
     height: 100%;
     padding: 0 -38px;
+  }
+  .work-container > *:not(:first-child) {
+    margin-top: 88px;
   }
   .work-container .work-row {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    margin-top: 88px;
   }
   .work-container .work-row .element-1 {
     position: relative;
@@ -146692,7 +146695,6 @@ template {
   .work-container .work-row .element-2 .definition-2 {
     width: -88px;
     padding: 20px 104px;
-    margin-top: -40px;
     border-radius: 999px;
     background-color: var(--md-sys-color-secondary-container);
   }
@@ -146792,15 +146794,18 @@ template {
   .work-container {
     display: flex;
     flex-direction: column;
+    justify-content: center;
     width: 100%;
     height: 100%;
     padding: 0 44px;
+  }
+  .work-container > *:not(:first-child) {
+    margin-top: 88px;
   }
   .work-container .work-row {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    margin-top: 88px;
   }
   .work-container .work-row .element-1 {
     position: relative;
@@ -146856,7 +146861,6 @@ template {
   .work-container .work-row .element-2 .definition-2 {
     width: 240px;
     padding: 20px 104px;
-    margin-top: -40px;
     border-radius: 999px;
     background-color: var(--md-sys-color-secondary-container);
   }
@@ -146956,15 +146960,18 @@ template {
   .work-container {
     display: flex;
     flex-direction: column;
+    justify-content: center;
     width: 100%;
     height: 100%;
     padding: 0 53.0833333333px;
+  }
+  .work-container > *:not(:first-child) {
+    margin-top: 88px;
   }
   .work-container .work-row {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    margin-top: 88px;
   }
   .work-container .work-row .element-1 {
     position: relative;
@@ -147020,7 +147027,6 @@ template {
   .work-container .work-row .element-2 .definition-2 {
     width: 260.3333333333px;
     padding: 20px 104px;
-    margin-top: -40px;
     border-radius: 999px;
     background-color: var(--md-sys-color-secondary-container);
   }
@@ -147120,15 +147126,18 @@ template {
   .work-container {
     display: flex;
     flex-direction: column;
+    justify-content: center;
     width: 100%;
     height: 100%;
     padding: 0 67.3333333333px;
+  }
+  .work-container > *:not(:first-child) {
+    margin-top: 88px;
   }
   .work-container .work-row {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    margin-top: 88px;
   }
   .work-container .work-row .element-1 {
     position: relative;
@@ -147184,7 +147193,6 @@ template {
   .work-container .work-row .element-2 .definition-2 {
     width: 365.3333333333px;
     padding: 20px 104px;
-    margin-top: -40px;
     border-radius: 999px;
     background-color: var(--md-sys-color-secondary-container);
   }
@@ -147284,15 +147292,18 @@ template {
   .work-container {
     display: flex;
     flex-direction: column;
+    justify-content: center;
     width: 100%;
     height: 100%;
     padding: 0 84px;
+  }
+  .work-container > *:not(:first-child) {
+    margin-top: 88px;
   }
   .work-container .work-row {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    margin-top: 88px;
   }
   .work-container .work-row .element-1 {
     position: relative;
@@ -147348,7 +147359,6 @@ template {
   .work-container .work-row .element-2 .definition-2 {
     width: 432px;
     padding: 20px 104px;
-    margin-top: -40px;
     border-radius: 999px;
     background-color: var(--md-sys-color-secondary-container);
   }
@@ -147448,15 +147458,18 @@ template {
   .work-container {
     display: flex;
     flex-direction: column;
+    justify-content: center;
     width: 100%;
     height: 100%;
     padding: 0 124px;
+  }
+  .work-container > *:not(:first-child) {
+    margin-top: 88px;
   }
   .work-container .work-row {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    margin-top: 88px;
   }
   .work-container .work-row .element-1 {
     position: relative;
@@ -147512,7 +147525,6 @@ template {
   .work-container .work-row .element-2 .definition-2 {
     width: 592px;
     padding: 20px 104px;
-    margin-top: -40px;
     border-radius: 999px;
     background-color: var(--md-sys-color-secondary-container);
   }
@@ -147612,15 +147624,18 @@ template {
   .work-container {
     display: flex;
     flex-direction: column;
+    justify-content: center;
     width: 100%;
     height: 100%;
     padding: 0 177.3333333333px;
+  }
+  .work-container > *:not(:first-child) {
+    margin-top: 88px;
   }
   .work-container .work-row {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    margin-top: 88px;
   }
   .work-container .work-row .element-1 {
     position: relative;
@@ -147676,7 +147691,6 @@ template {
   .work-container .work-row .element-2 .definition-2 {
     width: 805.3333333333px;
     padding: 20px 104px;
-    margin-top: -40px;
     border-radius: 999px;
     background-color: var(--md-sys-color-secondary-container);
   }

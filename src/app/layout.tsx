@@ -1,3 +1,4 @@
+import { StrictMode } from 'react'
 import type { Metadata } from 'next'
 
 // styles
@@ -19,6 +20,7 @@ export const metadata: Metadata = {
 	description: 'developed by .noah',
 }
 
+
 export default function RootLayout({
 	children,
 }: {
@@ -28,18 +30,20 @@ export default function RootLayout({
 		<html lang="en">
 			<body className='container display-f'>
 
-				<Nav />
-				
-				<Grid className='w-full'>
-					<Col col='2' extraLMargin className='z-2'>
-						<Scenario />
-					</Col>
-					<Col col='10' extraLMargin className='overflow-h'>
-						<Scene className='overflow-s'>
-							{children}
-						</Scene>
-					</Col>
-				</Grid>
+				<StrictMode>
+					<Nav />
+					
+					<Grid className='w-full'>
+						<Col col='2' extraLMargin className='z-2 overflow-h'>
+							<Scenario />
+						</Col>
+						<Col col='10' extraLMargin className='overflow-h'>	
+							<Scene className='overflow-s'>
+								{children}
+							</Scene>
+						</Col>
+					</Grid>
+				</StrictMode>
 
 			</body>
 		</html>
