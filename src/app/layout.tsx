@@ -34,8 +34,8 @@ export default function RootLayout({
 					<Col col='2' extraLMargin className='z-2'>
 						<Scenario />
 					</Col>
-					<Col col='10' extraLMargin>
-						<Scene>
+					<Col col='10' extraLMargin className='overflow-h'>
+						<Scene className='overflow-s'>
 							{children}
 						</Scene>
 					</Col>
