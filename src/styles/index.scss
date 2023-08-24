@@ -98,11 +98,10 @@
     position: relative;
     width: 100px;
     height: 510px;
-    overflow: hidden;
     background-color: var(--md-sys-color-on-primary-dark);
     .context-text {
         position: absolute;
-        left: 70%;
+        left: 65%;
         bottom: 0;
         transform: translate(0, 0) rotate(-90deg);
         transform-origin: left bottom;
@@ -132,6 +131,8 @@
             background-color: var(--md-sys-color-surface);
             z-index: 1;
         }
+
+        // index page
 
         .index-headline {
             width: $col * 5 + $gap * 4;
@@ -179,6 +180,8 @@
                 }
             }
         }
+
+        // wok page
 
         .work-container {
             display: flex;
@@ -281,6 +284,7 @@
                         z-index: 2;
                     }
                 }
+
                 .filled-iconbtn {
                     width: $base-width * 17;
                     height: $base-height * 17;
@@ -292,5 +296,96 @@
                 }
             }
         }
+
+        // human page
+
+        .human-container {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            .basics {
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                align-items: flex-end;
+                padding-right: $col;
+                .brand {
+                    font-size: 103px;
+                    font-weight: $black-fw;
+                    line-height: normal;
+                    letter-spacing: 5.15px;
+                    text-transform: uppercase;
+                    color: var(--md-sys-color-on-surface);
+                }
+                .tagline {
+                    font-size: 91px;
+                    font-weight: $black-fw;
+                    line-height: normal;
+                    letter-spacing: 4.55px;
+                    text-transform: uppercase;
+                    color: var(--md-sys-color-on-surface-variant);
+                }
+            }
+            .work-around {
+                display: flex;
+                flex-direction: column;
+                width: $col * 8 + $gap * 7;
+                margin-left: -($col + $gap);
+                p {
+                    width: $col * 4 + $gap * 3;
+                    padding: $base-padding * 5 $base-padding * 30 $base-padding * 5 $base-padding * 60;
+                    text-align: end;
+                    border-radius: $full-border-radius;
+                    background-color: var(--md-sys-color-primary-container);
+                    color: var(--md-sys-color-on-primary-container);
+                    margin-bottom: $base-margin * -10;
+                }
+                img {
+                    width: $col * 8 + $gap * 7;
+                    z-index: -1;
+                }
+                .filled-iconbtn {
+                    width: $base-width * 17;
+                    height: $base-height * 17;
+                    margin-left: auto;
+                    margin-right: $col;
+                    margin-top: $base-margin * -8.5;
+                    .icon {
+                        width: $type-display-small !important;
+                        height: $type-display-small !important;
+                        font-size: $type-display-small !important;
+                    }
+                }
+            }
+            .redirect {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                gap: 6px;
+                width: 100%;
+                p {
+                    font-size: $type-title-large;
+                    line-height: 20px;
+                    letter-spacing: 0.1px;
+                }
+                div {
+                    display: flex;
+                    align-items: center;
+                    gap: $base-padding * 3;
+                }
+                .filled-iconbtn {
+                    width: $base-width * 5;
+                    height: $base-height * 5;
+                    .icon {
+                        width: $type-body-small !important;
+                        height: $type-body-small !important;
+                        font-size: $type-body-small !important;
+                    }
+                }
+            }
+        }
+
     }
 }
