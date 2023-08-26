@@ -17,20 +17,20 @@ const ContactPage: FC = ({}) => {
         e.preventDefault();
 
         try {
-            const response = await fetch('/api/mailer', {
-              method: 'POST',
-              headers: {
-                'Content-Type': 'application/json',
-              },
-              body: JSON.stringify(form),
+            const response = await fetch('/api/sendEmail', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(form),
             });
       
             if (response.ok) {
-              console.log('Email sent successfully');
+                console.log('Email sent successfully');
             } else {
-              console.error('Error sending email');
+                console.error('Error sending email');
             }
-          } catch (error) {
+        } catch (error) {
             console.error('Error sending email:', error);
         }
 
