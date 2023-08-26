@@ -22,7 +22,7 @@
 
 // utilities
 @import 'base/utilities';
-@import 'layout/utility-layout';
+// @import 'layout/utility-layout';
 
 // changes & additions
 .container {
@@ -87,10 +87,9 @@
 }
 
 .socials {
-    padding-top: $base-padding * 12;
-    & > *:not(:first-child) {
-        margin-left: $base-padding * 3;
-    }
+    display: flex;
+    gap: $base-padding * 3;
+    margin-top: $base-margin * 12;
 }
 
 .context {
@@ -98,7 +97,7 @@
     position: relative;
     width: 100px;
     height: 510px;
-    background-color: var(--md-sys-color-on-primary-dark);
+    background-color: var(--md-sys-color-on-primary-fixed-variant);
     .context-text {
         position: absolute;
         left: 65%;
@@ -109,7 +108,7 @@
         font-size: 131px;
         letter-spacing: -6px;
         font-weight: $black-fw;
-        color: var(--md-sys-color-on-primary);
+        color: var(--md-sys-color-background);
     }
 }
 
@@ -141,7 +140,7 @@
             text-transform: uppercase;
             letter-spacing: 3.25px;
             line-height: 1.2;
-            color: var(--md-ref-palette-on-surface);
+            color: var(--md-sys-color-on-surface);
         }
 
         .index-detail {
@@ -150,6 +149,7 @@
             font-weight: $bold-fw;  
             line-height: normal;
             letter-spacing: $letter-spacing;
+            color: var(--md-sys-color-on-surface-variant);
         }
 
         .index-thumbnail {
@@ -176,6 +176,18 @@
                     background-color: var(--md-sys-color-primary-container);
                     .icon {
                         color: var(--md-sys-color-on-primary-container);
+                    }
+                    &:hover {
+                        background-color: var(--md-ref-palette-primary95);
+                        .icon {
+                            color: var(--md-sys-color-on-primary-container);
+                        }
+                    }
+                    &:active {
+                        background-color: var(--md-ref-palette-primary98);
+                        .icon {
+                            color: var(--md-sys-color-on-primary-container);
+                        }
                     }
                 }
             }
@@ -278,10 +290,10 @@
                     align-items: flex-end;
                     img {
                         width: $col * 3 + $gap * 3;
+                        z-index: -1;
                     }
                     .filled-iconbtn {
                         margin-right: $gap * -2;
-                        z-index: 2;
                     }
                 }
 
@@ -335,6 +347,10 @@
                 p {
                     width: $col * 4 + $gap * 3;
                     padding: $base-padding * 5 $base-padding * 30 $base-padding * 5 $base-padding * 60;
+                    font-size: $type-title-medium;
+                    font-weight: $medium-fw;
+                    line-height: normal;
+                    letter-spacing: $letter-spacing;
                     text-align: end;
                     border-radius: $full-border-radius;
                     background-color: var(--md-sys-color-primary-container);
@@ -351,10 +367,24 @@
                     margin-left: auto;
                     margin-right: $col;
                     margin-top: $base-margin * -8.5;
+                    background-color: var(--md-sys-color-primary-container);
                     .icon {
                         width: $type-display-small !important;
                         height: $type-display-small !important;
                         font-size: $type-display-small !important;
+                        color: var(--md-sys-color-on-primary-container);
+                    }
+                    &:hover {
+                        background-color: var(--md-ref-palette-primary95);
+                        .icon {
+                            color: var(--md-sys-color-on-primary-container);
+                        }
+                    }
+                    &:active {
+                        background-color: var(--md-ref-palette-primary98);
+                        .icon {
+                            color: var(--md-sys-color-on-primary-container);
+                        }
                     }
                 }
             }
@@ -369,6 +399,7 @@
                     font-size: $type-title-large;
                     line-height: 20px;
                     letter-spacing: 0.1px;
+                    color: var(--md-sys-color-on-surface-variant);
                 }
                 div {
                     display: flex;
@@ -378,13 +409,158 @@
                 .filled-iconbtn {
                     width: $base-width * 5;
                     height: $base-height * 5;
+                    background-color: var(--md-sys-color-primary-container);
                     .icon {
                         width: $type-body-small !important;
                         height: $type-body-small !important;
                         font-size: $type-body-small !important;
+                        color: var(--md-sys-color-on-primary-container);
+                    }
+                    &:hover {
+                        background-color: var(--md-ref-palette-primary95);
+                        .icon {
+                            color: var(--md-sys-color-on-primary-container);
+                        }
+                    }
+                    &:active {
+                        background-color: var(--md-ref-palette-primary98);
+                        .icon {
+                            color: var(--md-sys-color-on-primary-container);
+                        }
                     }
                 }
             }
+        }
+
+        // contact page
+
+        .contact-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: $base-padding * 22;
+            width: 100%;
+            height: 100%;
+            padding: $base-padding * 15 0;
+            text-transform: uppercase;
+            .basics {
+                padding-left: $col;
+                h1 {
+                    display: inline-block;
+                    width: $col * 4 + $gap * 5;
+                    height: $base-height * 28;
+                    font-size: 116px;
+                    line-height: normal;
+                    letter-spacing: 5.8px;
+                    color: var(--md-sys-color-background);
+                    background-color: var(--md-sys-color-on-primary-fixed-variant);
+                }
+                .subtitle {
+                    margin-top: $base-margin * 7;
+                    span {
+                        display: table;
+                        height: $base-height * 6;
+                        margin-bottom: 4px;
+                        font-size: $type-title-large;
+                        line-height: normal;
+                        letter-spacing: 1.1px;
+                        font-weight: $black-fw;
+                        color: var(--md-sys-color-on-primary-container);
+                        background: var(--md-sys-color-primary-container);
+                    }
+                }
+            }
+            .contact-form {
+                display: flex;
+                flex-direction: column;
+                gap: $base-padding * 22;
+                padding-left: $col;
+                form {
+                    display: flex;
+                    flex-direction: column;
+                    gap: $base-padding * 22;
+                    span {
+                        font-size: 81px;
+                        line-height: normal;
+                        letter-spacing: 4.162px;
+                        font-weight: $black-fw;
+                        color: var(--md-sys-color-on-surface);
+                    }
+                    .input-container {
+                        position: relative;
+                        width: $base-width * 105;
+                        overflow: hidden;
+                        input {
+                            width: 100%;
+                            height: 100%;
+                            border: none;
+                            font-size: 64px;
+                            color: var(--md-sys-color-on-surface);
+                            background: none;
+                            &:focus {
+                                outline: none;
+                                & + label::after {
+                                    transform: translateX(0%);
+                                }
+                            }
+                            &:valid {
+                                & + label::after {
+                                    transform: translateX(0%);
+                                }
+                            }
+                        }
+                        label {
+                            position: absolute;
+                            bottom: 20px;
+                            left: 0px;
+                            width: 100%;
+                            height: 100%;
+                            pointer-events: none;
+                            border-bottom: 3px solid var(--md-sys-color-on-surface);
+                            &::after {
+                                content: "";
+                                position: absolute;
+                                bottom: 0px;
+                                left: 0px;
+                                width: 100%;
+                                height: 100%;
+                                border-bottom: 3px solid var(--md-sys-color-on-primary-container);
+                                transform: translateX(-100%);
+                                transition: $easing;
+                            }
+                        }
+                    }
+                    .redirect {
+                        width: 100%;
+                        display: flex;
+                        justify-content: end;
+                        padding-right: $col + $gap;
+                        .filled-iconbtn {
+                            width: $base-width * 31;
+                            height: $base-height * 31;
+                            background-color: var(--md-sys-color-primary-container);
+                            .icon {
+                                width: $base-width * 16 !important;
+                                font-size: $base-width * 16 !important;
+                                color: var(--md-sys-color-on-primary-container);
+                            }
+                            &:hover {
+                                background-color: var(--md-ref-palette-primary95);
+                                .icon {
+                                    color: var(--md-sys-color-on-primary-container);
+                                }
+                            }
+                            &:active {
+                                background-color: var(--md-ref-palette-primary98);
+                                .icon {
+                                    color: var(--md-sys-color-on-primary-container);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
         }
 
     }

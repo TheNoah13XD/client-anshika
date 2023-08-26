@@ -29,7 +29,7 @@ const Scenario: FC<ScenarioProps> = ({ className }) => {
 
     return(
         <>
-            <div className={`scenario` + (className ? ` ${className}` : '')}>
+            <div className={`scenario${className ? ` ${className}` : ''}`}>
                 <div className='display-f flex-column grid-margin-1'>
                     <img src='/anshika.png' alt='logo' className='grid-column-width-1 unselectable' />
                     <div className='socials'>

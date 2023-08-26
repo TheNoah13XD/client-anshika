@@ -6,9 +6,12 @@ interface SceneProps {
 }
 
 const Scene: FC<SceneProps> = ({children, className}) => {
+
+    const combinedClassName = `scene${className ? ` ${className}` : ''}`;
+
     return(
         <>
-            <div className={`scene` + (className ? ` ${className}` : '')}>
+            <div className={combinedClassName}>
                 {children}
             </div>
         </>

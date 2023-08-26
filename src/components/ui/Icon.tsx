@@ -8,8 +8,11 @@ interface IconProps {
 }
 
 const Icon: FC<IconProps> = ({type = 'outlined', icon, className}) => {
+
+    const iconClassName = `material-symbols-${type} ${className} unselectable`;
+
     return (
-        <span className={`material-symbols-${type} ${className} unselectable`}>{icon}</span>
+        <span className={iconClassName}>{icon}</span>
     )
 }
 

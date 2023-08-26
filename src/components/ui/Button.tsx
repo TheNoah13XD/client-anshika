@@ -13,13 +13,14 @@ interface ButtonProps {
 }
 
 const Button: FC<ButtonProps> = ({ children, disabled, className, type = 'filled', icon }) => {
+    
+    const buttonClassName = `${type}-btn`;
+    const iconElement = icon ? <Icon className="btn-icon" icon={icon} /> : null;
+
     return (
         <div className={className}>
-            <button
-                className={`${type}-btn`}
-                disabled={disabled}
-            >
-                {icon && <Icon className="btn-icon" icon={icon} />}
+            <button className={buttonClassName} disabled={disabled}>
+                {iconElement}
                 <span className="btn-label">{children}</span>
             </button>
         </div>

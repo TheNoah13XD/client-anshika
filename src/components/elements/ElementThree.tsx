@@ -1,4 +1,5 @@
 import { FC } from "react";
+import Link from "next/link";
 
 // components
 import IconButton from "@/components/ui/IconButton";
@@ -8,10 +9,13 @@ interface ElementThreeProps {
 }
 
 const ElementThree: FC<ElementThreeProps> = ({ className }) => {
+
+    const combinedClassName = `element-3${className ? ` ${className}` : ''}`;
+
     return (
-        <div className={`element-3` + (className ? ` ${className}` : '')}>
+        <div className={combinedClassName}>
             <img src="/shapes/3.png" alt="three" />
-            <IconButton icon="north_east" />
+            <Link href="#"><IconButton icon="north_east" /></Link>
         </div>
     )
 }

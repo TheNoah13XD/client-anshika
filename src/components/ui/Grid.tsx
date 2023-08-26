@@ -18,8 +18,11 @@ interface ColProps {
 }
 
 const Grid: FC<GridProps> = ({ children, className }) => {
+
+    const combinedClassName = `grid-container${className ? ` ${className}` : ''}`;
+
     return (
-        <div className={`grid-container` + (className ? ` ${className}` : '')}>
+        <div className={combinedClassName}>
             {children}
         </div>
     )
@@ -43,7 +46,5 @@ const Col: FC<ColProps> = ({ children, col, start, extraWidth, extraStart, extra
         </div>    
     )
 }
-
-
 
 export { Grid, Col };

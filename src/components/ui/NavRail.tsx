@@ -26,22 +26,24 @@ const NavRail: FC<NavRailProps> = ({ children }) => {
     return (
         <nav className="rail">
             <div className="rail-content">
-                {React.Children.map(children, (child) => {
-                    if (React.isValidElement(child)) {
-                        return React.cloneElement(child, { isActive: pathname === child.props.path } as { isActive: boolean });
-                    }
-                    return child;
-                })}
+            {React.Children.map(children, (child) =>
+                React.isValidElement(child)
+                    ? React.cloneElement(child, { isActive: pathname === child.props.path } as { isActive: boolean } )
+                    : child
+            )}
             </div>
         </nav>
     );
 };
 
 const NavItem: FC<NavItemProps> = ({ path, icon, label, isActive }) => {
+    
+    const classNames = `destination-${isActive ? 'active' : 'item'}`;
+
     return (
-        <Link href={path} className={`destination-${isActive ? 'active' : 'item'}`}>
+        <Link href={path} className={classNames}>
             <div className="indicator">
-                <Icon className="icon" icon={icon} />
+                {icon && <Icon className="icon" icon={icon} />}
             </div>
             <span className="label">{label}</span>
         </Link>
