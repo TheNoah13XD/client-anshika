@@ -17,7 +17,7 @@ const ElementTwo: FC<ElementTwoProps> = ({ className }) => {
             <div className="definition-1">
                 <p>where style dazzles, fashion redefines allure.</p>
                 <img src="/shapes/2.png" alt="two" />
-                <Link href="#"><IconButton icon="north_east" /></Link>
+                <Link href="/work/one"><IconButton icon="north_east" /></Link>
             </div>
             <div className="definition-2">
                 <p>Captivating style redefines allure with enchanting fashion, unveiling limitless elegance.</p>

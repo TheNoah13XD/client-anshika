@@ -13,7 +13,7 @@ export default function Home() {
 				</div>
 				<div className="index-thumbnail">
 					<img src="/index-thumbnail.png" alt="index-thumbnail" className="thumbnail unselectable" />
-					<Link href="#" className="index-btn"><IconButton icon="north_east" /></Link>
+					<Link href="/work/one" className="index-btn"><IconButton icon="north_east" /></Link>
 				</div>
 			</div>
 		</>

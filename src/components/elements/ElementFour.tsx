@@ -14,7 +14,7 @@ const ElementFour: FC<ElementFourProps> = ({ className }) => {
 
     return (
         <div className={combinedClassName}>
-            <Link href="#"><IconButton icon="north_east" /></Link>
+            <Link href="/work/one"><IconButton icon="north_east" /></Link>
             <img src="/shapes/4.png" alt="four" />
         </div>
     )

@@ -17,7 +17,7 @@ const ElementOne: FC<ElementOneProps> = ({ className }) => {
         <div className={combinedClassName}>
             <div className="display-f align-i-e">
                 <img src="/shapes/1.png" alt="one" />
-                <Link href="#"><IconButton icon="north_east" /></Link>
+                <Link href="/work/one"><IconButton icon="north_east" /></Link>
             </div>
             <div className="element-1-column">
                 <Button icon="share" type="filled" className="pt-7">Share</Button>

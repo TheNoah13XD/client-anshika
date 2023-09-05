@@ -12,18 +12,18 @@ const HumanPage: FC = ({}) => {
                 <div className="basics">
                     <p className="brand">Anshika</p>
                     <p className="tagline">REVAMP, INSPIRE</p>
-                    <Link href="#"><Button icon="arrow_forward">Work</Button></Link>
+                    <Link href="/work"><Button icon="arrow_forward">Work</Button></Link>
                 </div>
                 <div className="work-around">
                     <p>Empowering fashion expression with curated expertise.</p>
                     <img src="/shapes/5.png" alt="five" />
-                    <Link href="#"><IconButton icon="north_east" /></Link>
+                    <Link href="/contact"><IconButton icon="north_east" /></Link>
                 </div>
                 <div className="redirect">
                     <p>Discover a captivating portfolio of our remarkable work. </p>
                     <div>
                         <p>Explore our creative vision.</p>
-                        <Link href="#"><IconButton icon="north_east" /></Link>
+                        <Link href="/work"><IconButton icon="north_east" /></Link>
                     </div>
                 </div>
             </div>

@@ -126,7 +126,7 @@
             width: 100%;
             height: 100%;
             padding-left: $margin;
-            border-radius: $x-large-border-radius;
+            border-radius: 0 $x-large-border-radius $x-large-border-radius 0;
             background-color: var(--md-sys-color-surface);
             z-index: 1;
         }
@@ -315,7 +315,8 @@
             height: 100%;
             display: flex;
             flex-direction: column;
-            justify-content: space-around;
+            padding: $base-padding * 5 0;
+            justify-content: space-between;
             .basics {
                 width: 100%;
                 display: flex;
@@ -460,7 +461,7 @@
                     span {
                         display: table;
                         height: $base-height * 6;
-                        margin-bottom: 4px;
+                        margin-bottom: $base-margin;
                         font-size: $type-title-large;
                         line-height: normal;
                         letter-spacing: 1.1px;
@@ -533,7 +534,7 @@
                     .redirect {
                         width: 100%;
                         display: flex;
-                        justify-content: end;
+                        justify-content: flex-end;
                         padding-right: $col + $gap;
                         .filled-iconbtn {
                             width: $base-width * 31;
@@ -561,6 +562,151 @@
                 }
             }
 
+        }
+
+        // work page
+
+        .work-details-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: calc(100% + #{$margin});
+            margin-left: -$margin;
+            img {
+                position: relative;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+            .thumbnail-btns {
+                display: flex;
+                justify-content: space-between;
+                width: 100%;
+                padding: 0 $base-padding * 6;
+                margin-top: $base-margin * -16;
+                z-index: 2;
+                .filled-iconbtn {
+                    background-color: var(--md-sys-color-primary-container);
+                    .icon {
+                        color: var(--md-sys-color-on-primary-container);
+                    }
+                    &:hover {
+                        background-color: var(--md-ref-palette-primary95);
+                        .icon {
+                            color: var(--md-sys-color-on-primary-container);
+                        }
+                    }
+                    &:active {
+                        background-color: var(--md-ref-palette-primary98);
+                        .icon {
+                            color: var(--md-sys-color-on-primary-container);
+                        }
+                    }
+                }
+            }
+            .details {
+                width: $col * 10 + $gap * 11;
+                margin-top: $base-padding * 22;
+                .title {
+                    font-size: 103px;
+                    font-weight: $black-fw;
+                    line-height: 103px;
+                    letter-spacing: -5.15px;
+                    text-transform: uppercase;
+                    color: var(--md-sys-color-on-surface);
+                }
+                .description {
+                    display: table;
+                    font-size: $type-headline-large;
+                    font-weight: $black-fw;
+                    line-height: normal;
+                    padding-right: $col;
+                    color: var(--md-sys-color-on-primary-container);
+                    background: var(--md-sys-color-primary-container);
+                }
+                .path {
+                    font-size: $type-headline-large;
+                    font-family: $bold-fw;
+                    line-height: normal;
+                    color: var(--md-sys-color-on-surface);
+                }
+                .pc {
+                    display: flex;
+                    align-items: center;
+                    gap: $base-padding;
+                    padding-left: $gap;
+                    color: var(--md-sys-color-on-secondary-container);
+                    background: var(--md-sys-color-primary-container);
+                    p {
+                        display: table;
+                        font-size: $type-headline-large;
+                        font-weight: $base-fw;
+                        line-height: normal;
+                    }
+                }
+                .date {
+                    display: table;
+                    font-size: $type-headline-large;
+                    font-weight: $base-fw;
+                    line-height: normal;
+                    padding-left: $gap;
+                    color: var(--md-sys-color-on-secondary-container);
+                    background: var(--md-sys-color-primary-container);
+                }
+            }
+            .shoot-controls {
+                display: flex;
+                gap: $base-padding * 40;
+                align-self: flex-end;
+                border-radius: $large-border-radius;
+                margin-top: $base-margin * 30;
+                padding: $base-padding * 8 $base-padding * 12;
+                background-color: var(--md-sys-color-primary);
+                z-index: 2;
+            }
+            .shoot {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-self: flex-start;
+                width: calc(100% - #{$col});
+                // height: $base-height * 140;
+                border-radius: 0 $full-border-radius $full-border-radius 0;
+                padding: $base-padding * 16 0;
+                margin-top: $base-margin * -13;
+                background-color: var(--md-ref-palette-primary95);
+                .shoots {
+                    display: flex;
+                    gap: $gap;
+                    padding-left: $margin;
+                    .pic-1 {
+                        width: $col * 3 + $gap * 2;
+                        border-radius: $x-large-border-radius;
+                    }
+                    .shoots-side {
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: space-between;
+                        .sub-pics {
+                            display: flex;
+                            gap: $gap;
+                            .sub-pic {
+                                width: $col * 2 + $gap;
+                                border-radius: $large-border-radius;
+                            }
+                        }
+                        .shoot-details p {
+                            font-size: $type-headline-medium;
+                            font-weight: $medium-fw;
+                            line-height: normal;
+                            padding: $base-padding * 6;
+                            border-radius: $x-large-border-radius;
+                            color: var(--md-sys-color-on-primary);
+                            background-color: var(--md-sys-color-primary);
+                        }
+                    }
+                }
+            }
         }
 
     }

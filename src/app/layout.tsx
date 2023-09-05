@@ -1,5 +1,9 @@
+'use client'
+
 import { StrictMode } from 'react'
 import type { Metadata } from 'next'
+import React from 'react';
+import { usePathname } from 'next/navigation';
 
 // styles
 import '@/styles/index.css'
@@ -26,6 +30,10 @@ export default function RootLayout({
 }: {
 	children: React.ReactNode
 }) {
+	const pathname = usePathname();
+	const routeConfig = ['/', '/work', '/human', '/contact'];
+	const hasScenario = routeConfig.includes(pathname);
+
 	return (
 		<html lang="en">
 			<body className='container display-f'>
@@ -34,10 +42,14 @@ export default function RootLayout({
 					<Nav />
 					
 					<Grid className='w-full'>
-						<Col col='2' extraLMargin className='z-2 overflow-h'>
-							<Scenario />
-						</Col>
-						<Col col='10' extraLMargin className='overflow-h'>	
+						{hasScenario ? (
+							<>
+								<Col col='2' extraLMargin className='z-2 overflow-h'>
+									<Scenario />
+								</Col>
+							</>
+						) : null}
+						<Col col={hasScenario ? '10' : '12'} extraLMargin className='overflow-h'>
 							<Scene className='overflow-s'>
 								{children}
 							</Scene>
