@@ -1,7 +1,6 @@
 'use client'
 
 import { StrictMode } from 'react'
-import type { Metadata } from 'next'
 import React from 'react';
 import { usePathname } from 'next/navigation';
 
@@ -18,11 +17,6 @@ import Scenario from '@/components/Scenario';
 import { config } from '@fortawesome/fontawesome-svg-core'
 import '@fortawesome/fontawesome-svg-core/styles.css'
 config.autoAddCss = false
-
-export const metadata: Metadata = {
-	title: '.anshika - portfolio',
-	description: 'developed by .noah',
-}
 
 export default function RootLayout({
 	children,
