@@ -1,11 +1,61 @@
-import { FC } from "react";
+'use client'
+
+import { FC, useEffect, useRef } from "react";
 
 // components
 import Button from "@/components/ui/Button";
 import IconButton from "@/components/ui/IconButton";
 import Icon from "@/components/ui/Icon";
 
+// swiper
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
+import 'swiper/css/pagination';
+import 'swiper/css/navigation';
+
 const One: FC = ({}) => {
+
+    const swiperOne:any = useRef();
+    const swiperTwo:any = useRef();
+
+    const firstSwiper = {
+        // centeredSlides: true,
+        loop: true,
+        grabCursor:true,
+        freeMode: {
+            enabled: true,
+            sticky: true,
+        },
+    }
+
+    const secondSwiper = {
+        // centeredSlides: false,
+        loop: true,
+        grabCursor:true,
+        freeMode: {
+            enabled: true,
+            sticky: true,
+        },
+    }
+
+    useEffect(() => {
+        swiperOne.current.swiper.on('touchMove', function () {
+            const one = swiperOne.current.swiper;
+            const two = swiperTwo.current.swiper;
+            two.changeLanguageDirection('rtl')
+            two.translateTo(one.translate, 0, 0, false);
+        });
+    }, [swiperOne]);
+
+    useEffect(() => {
+        swiperTwo.current.swiper.on('touchMove', function () {
+            const one = swiperOne.current.swiper;
+            const two = swiperTwo.current.swiper;
+            one.changeLanguageDirection('ltr')
+            one.translateTo(two.translate, 0, 0, false);
+        });
+    }, [swiperTwo]);
+
     return (
         <>
             <div className="work-details-container">
@@ -50,9 +100,109 @@ const One: FC = ({}) => {
                         </div>
                     </div>
                 </div>
-                {/* <div className="more-projects">
 
-                </div> */}
+                <Swiper {...firstSwiper} ref={swiperOne} className="unselectable" slidesPerView={"auto"}>
+                    <SwiperSlide>
+                        <div>
+                            <img src="/more-work/one.png" alt="one" />
+                            <IconButton icon="north_east" />
+                        </div>
+                    </SwiperSlide>
+                    <SwiperSlide>
+                        <div>
+                            <img src="/more-work/two.png" alt="two" />
+                            <IconButton icon="north_east" />
+                        </div>
+                    </SwiperSlide>
+                    <SwiperSlide>
+                        <div>
+                            <img src="/more-work/three.png" alt="three" />
+                            <IconButton icon="north_east" />
+                        </div>
+                    </SwiperSlide>
+                    <SwiperSlide>
+                        <div>
+                            <img src="/more-work/four.png" alt="four" />
+                            <IconButton icon="north_east" />
+                        </div>
+                    </SwiperSlide>
+                    <SwiperSlide>
+                        <div>
+                            <img src="/more-work/one.png" alt="one" />
+                            <IconButton icon="north_east" />
+                        </div>
+                    </SwiperSlide>
+                    <SwiperSlide>
+                        <div>
+                            <img src="/more-work/two.png" alt="two" />
+                            <IconButton icon="north_east" />
+                        </div>
+                    </SwiperSlide>
+                    <SwiperSlide>
+                        <div>
+                            <img src="/more-work/three.png" alt="three" />
+                            <IconButton icon="north_east" />
+                        </div>
+                    </SwiperSlide>
+                    <SwiperSlide>
+                        <div>
+                            <img src="/more-work/four.png" alt="four" />
+                            <IconButton icon="north_east" />
+                        </div>
+                    </SwiperSlide>
+                </Swiper>
+
+                <Swiper {...secondSwiper} ref={swiperTwo} className="unselectable" slidesPerView={"auto"}>
+                    <SwiperSlide>
+                        <div>
+                            <img src="/more-work/four.png" alt="four" />
+                            <IconButton icon="north_east" />
+                        </div>
+                    </SwiperSlide>
+                    <SwiperSlide>
+                        <div>
+                            <img src="/more-work/three.png" alt="three" />
+                            <IconButton icon="north_east" />
+                        </div>
+                    </SwiperSlide>
+                    <SwiperSlide>
+                        <div>
+                            <img src="/more-work/two.png" alt="two" />
+                            <IconButton icon="north_east" />
+                        </div>
+                    </SwiperSlide>
+                    <SwiperSlide>
+                        <div>
+                            <img src="/more-work/one.png" alt="one" />
+                            <IconButton icon="north_east" />
+                        </div>
+                    </SwiperSlide>
+                    <SwiperSlide>
+                        <div>
+                            <img src="/more-work/four.png" alt="four" />
+                            <IconButton icon="north_east" />
+                        </div>
+                    </SwiperSlide>
+                    <SwiperSlide>
+                        <div>
+                            <img src="/more-work/three.png" alt="three" />
+                            <IconButton icon="north_east" />
+                        </div>
+                    </SwiperSlide>
+                    <SwiperSlide>
+                        <div>
+                            <img src="/more-work/two.png" alt="two" />
+                            <IconButton icon="north_east" />
+                        </div>
+                    </SwiperSlide>
+                    <SwiperSlide>
+                        <div>
+                            <img src="/more-work/one.png" alt="one" />
+                            <IconButton icon="north_east" />
+                        </div>
+                    </SwiperSlide>
+                </Swiper>
+
             </div>
         </>
     )
