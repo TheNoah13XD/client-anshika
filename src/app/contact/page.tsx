@@ -65,7 +65,7 @@ const ContactPage: FC = ({}) => {
                                 </div>
                                 <span>,</span>
                             </div>
-                            <div className="input-flex pt-3">
+                            <div className="input-flex input-pt">
                                 <span>Looking for </span>
                                 <div className="input-container">
                                     <input type="text" name="text" autoComplete="off" required value={form.text} onChange={handleChange} />
@@ -73,7 +73,7 @@ const ContactPage: FC = ({}) => {
                                 </div>
                                 <span>,</span>
                             </div>
-                            <div className="input-flex pt-3">
+                            <div className="input-flex input-pt">
                                 <span>And my email is </span>
                                 <div className="input-container">
                                     <input type="text" name="email" autoComplete="off" required value={form.email} onChange={handleChange} />

@@ -81,7 +81,10 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    padding: ($base-padding * 12) 0;
+    padding: ($base-padding * 6) 0;
+    @include breakpoint('lg') {
+        padding: ($base-padding * 12) 0;
+    }
     border-radius: 0 $large-border-radius $large-border-radius 0;
     background-color: var(--md-ref-palette-primary95);
 }
@@ -103,6 +106,10 @@
     position: relative;
     width: 84px;
     height: 428px;
+    @include breakpoint('fr') {
+        width: 70px;
+        height: 360px;
+    }
     @include breakpoint('lg') {
         width: 84px;
         height: 428px;
@@ -120,6 +127,10 @@
         transform-origin: left bottom;
         white-space: nowrap;
         font-size: 103px;
+        @include breakpoint('fr') {
+            left: 70%;
+            font-size: 91px;
+        }
         @include breakpoint('lg') {
             left: 70%;
             font-size: 103px;
@@ -155,9 +166,21 @@
 
         // index page
 
+        .index-container {
+            padding-top: $base-padding * 6;
+            padding-bottom: $base-padding * 6;
+            @include breakpoint('lg') {
+                padding-top: $base-padding * 8;
+                padding-bottom: $base-padding * 12;
+            }
+        }
+
         .index-headline {
             width: $col * 5 + $gap * 4;
             font-size: $type-display-medium;
+            @include breakpoint('fr') {
+                font-size: $type-display-small;
+            }
             @include breakpoint('lg') {
                 font-size: $type-display-medium;
             }
@@ -172,7 +195,7 @@
         }
 
         .index-detail {
-            width: $col * 3 + $gap * 2;
+            width: $col * 3 + $gap * 3;
             font-size: $type-label-medium;
             @include breakpoint('lg') {
                 width: $col * 3 + $gap * 2;
@@ -204,7 +227,10 @@
             .index-btn {
                 position: absolute;
                 left: $gap;
-                bottom: $base-padding * 12;
+                bottom: $base-padding * 6;
+                @include breakpoint('lg') {
+                    bottom: $base-padding * 12;
+                }
                 z-index: 2;
                 .filled-iconbtn {
                     background-color: var(--md-sys-color-primary-container);
@@ -256,8 +282,9 @@
                     .element-1-column {
                         display: flex;
                         justify-content: center;
-                        width: $col + $gap *2;
+                        width: $col + $gap * 2;
                         div {
+                            padding-top: $base-padding * 3;
                             @include breakpoint('lg') {
                                 padding-top: $base-padding * 7;
                             }
@@ -266,7 +293,7 @@
                             }
                         }
                     }
-                }
+                } 
                 .element-2 {
                     position: relative;
                     display: flex;
@@ -291,7 +318,7 @@
                             margin: $base-margin * 4 $gap;
                         }
                         p {
-                            font-size: $type-headline-medium;
+                            font-size: $type-headline-small;
                             @include breakpoint('lg') {
                                 font-size: $type-headline-medium;
                             }
@@ -308,9 +335,10 @@
                         }
                     }
                     .definition-2 {
-                        width: $col * 4 + $gap * 4;
-                        padding: $base-padding * 5 $base-padding * 19;
+                        width: $col * 4 + $gap * 6;
+                        padding: $base-padding * 5 $base-padding * 17;
                         @include breakpoint('lg') {
+                            width: $col * 4 + $gap * 4;
                             padding: $base-padding * 5 $base-padding * 19;
                         }
                         @include breakpoint('xl') {
@@ -319,7 +347,7 @@
                         border-radius: $full-border-radius;
                         background-color: var(--md-sys-color-secondary-container);
                         p {
-                            font-size: $type-label-small;
+                            font-size: 10px;
                             @include breakpoint('lg') {
                                 font-size: $type-label-small;
                             }
@@ -340,7 +368,7 @@
                         width: $col * 3 + $gap * 3;
                     }
                     .filled-iconbtn {
-                        margin-left: $gap * -1;
+                        margin-left: $gap * -0.5;
                         @include breakpoint('lg') {
                             margin-left: $gap * -1;
                         }
@@ -358,7 +386,7 @@
                         z-index: -1;
                     }
                     .filled-iconbtn {
-                        margin-right: $gap * -1;
+                        margin-right: $gap * -0.5;
                         @include breakpoint('lg') {
                             margin-right: $gap * -1;
                         }
@@ -369,8 +397,8 @@
                 }
 
                 .filled-iconbtn {
-                    width: $base-width * 13;
-                    height: $base-height * 13;
+                    width: $base-width * 12;
+                    height: $base-height * 12;
                     @include breakpoint('lg') {
                         width: $base-width * 13;
                         height: $base-width * 13;
@@ -394,7 +422,7 @@
             height: 100%;
             display: flex;
             flex-direction: column;
-            padding: $base-padding * 12 0;
+            padding: $base-padding * 4 0;
             @include breakpoint('lg') {
                 padding: $base-padding * 12 0;
             }
@@ -409,7 +437,7 @@
                 align-items: flex-end;
                 padding-right: $col;
                 .brand {
-                    font-size: 91px;
+                    font-size: 81px;
                     @include breakpoint('lg') {
                         font-size: 91px;
                     }
@@ -423,7 +451,7 @@
                     color: var(--md-sys-color-on-surface);
                 }
                 .tagline {
-                    font-size: 81px;
+                    font-size: 72px;
                     @include breakpoint('lg') {
                         font-size: 81px;
                     }
@@ -443,9 +471,9 @@
                 width: $col * 8 + $gap * 7;
                 margin-left: -($col + $gap);
                 p {
-                    width: $col * 4 + $gap * 3;
+                    width: $col * 4 + $gap * 4;
                     padding: $base-padding * 5 $col $base-padding * 5 ($col * 2 + $gap);
-                    font-size: $type-label-small;
+                    font-size: 10px;
                     @include breakpoint('lg') {
                         padding: $base-padding * 5 $col $base-padding * 5 ($col * 2 + $gap);
                         font-size: 10px;
@@ -468,8 +496,8 @@
                     z-index: -1;
                 }
                 .filled-iconbtn {
-                    width: $base-width * 12;
-                    height: $base-height * 12;
+                    width: $base-width * 11;
+                    height: $base-height * 11;
                     @include breakpoint('lg') {
                         width: $base-width * 12;
                         height: $base-height * 12;
@@ -558,17 +586,17 @@
             display: flex;
             flex-direction: column;
             justify-content: center;
-            gap: $base-padding * 18;
-            width: 100%;
-            height: 100%;
-            padding: $base-padding * 12 0;
+            gap: $base-padding * 10;
             @include breakpoint('lg') {
                 gap: $base-padding * 18;
-                padding: $base-padding * 12  0;
+            }
+            width: 100%;
+            height: 100%;
+            @include breakpoint('lg') {
+                gap: $base-padding * 18;
             }
             @include breakpoint('xl') {
                 gap: $base-padding * 22;
-                padding: $base-padding * 17 0;
             }
             text-transform: uppercase;
             .basics {
@@ -581,9 +609,9 @@
                 }
                 h1 {
                     display: inline-block;
-                    width: $col * 5 + $gap * 5;
-                    height: $base-height * 24;
-                    font-size: 103px;
+                    width: $col * 5 + $gap * 6;
+                    height: $base-height * 20;
+                    font-size: 91px;
                     line-height: normal;
                     letter-spacing: 5.8px;
                     @include breakpoint('lg') {
@@ -602,7 +630,10 @@
                     background-color: var(--md-sys-color-on-primary-fixed-variant);
                 }
                 .subtitle {
-                    margin-top: $base-margin * 7;
+                    margin-top: 0;
+                    @include breakpoint('lg') {
+                        margin-top: $base-margin * 7;
+                    }
                     span {
                         display: table;
                         height: $base-height * 6;
@@ -619,7 +650,6 @@
             .contact-form {
                 display: flex;
                 flex-direction: column;
-                gap: $base-padding * 22;
                 padding-left: 0;
                 @include breakpoint('lg') {
                     padding-left: 0;
@@ -630,12 +660,18 @@
                 form {
                     display: flex;
                     flex-direction: column;
-                    gap: $base-padding * 18;
+                    gap: $base-padding * 10;
                     @include breakpoint('lg') {
                         gap: $base-padding * 18;
                     }
                     @include breakpoint('xl') {
                         gap: $base-padding * 22;
+                    }
+                    .input-pt {
+                        padding-top: 0;
+                        @include breakpoint('lg') {
+                            padding-top: $base-padding * 3;
+                        }
                     }
                     .input-flex {
                         display: flex;
@@ -648,9 +684,9 @@
                         }
                         position: relative;
                         span {
-                            font-size: 64px;  
+                            font-size: 51px;
                             line-height: normal;
-                            letter-spacing: 3.2px;
+                            letter-spacing: 2.55px;
                             @include breakpoint('lg') {
                                 font-size: 64px;
                                 letter-spacing: 3.2px;
@@ -664,7 +700,10 @@
                         }
                         .input-container {
                             position: relative;
-                            width: $base-width * 105;
+                            width: $base-width * 90;
+                            @include breakpoint('lg') {
+                                width: $base-width * 105;
+                            }
                             overflow: hidden;
                             input {
                                 width: 100%;
