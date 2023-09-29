@@ -19,7 +19,7 @@ const One: FC = ({}) => {
     const swiperTwo:any = useRef();
 
     const firstSwiper = {
-        // centeredSlides: true,
+        centeredSlides: true,
         loop: true,
         grabCursor:true,
         freeMode: {
@@ -29,7 +29,7 @@ const One: FC = ({}) => {
     }
 
     const secondSwiper = {
-        // centeredSlides: false,
+        centeredSlides: false,
         loop: true,
         grabCursor:true,
         freeMode: {
