@@ -57,7 +57,7 @@ const ContactPage: FC = ({}) => {
                 <div className="contact-form">
                     <form onSubmit={handleSubmit}>
                         <div>
-                            <div className="display-f pos-relative gap-6">
+                            <div className="input-flex">
                                 <span>Hey! I'm </span>
                                 <div className="input-container">
                                     <input type="text" name="name" autoComplete="off" required value={form.name} onChange={handleChange} />
@@ -65,7 +65,7 @@ const ContactPage: FC = ({}) => {
                                 </div>
                                 <span>,</span>
                             </div>
-                            <div className="display-f pos-relative gap-6 pt-3">
+                            <div className="input-flex pt-3">
                                 <span>Looking for </span>
                                 <div className="input-container">
                                     <input type="text" name="text" autoComplete="off" required value={form.text} onChange={handleChange} />
@@ -73,7 +73,7 @@ const ContactPage: FC = ({}) => {
                                 </div>
                                 <span>,</span>
                             </div>
-                            <div className="display-f pos-relative gap-6 pt-3">
+                            <div className="input-flex pt-3">
                                 <span>And my email is </span>
                                 <div className="input-container">
                                     <input type="text" name="email" autoComplete="off" required value={form.email} onChange={handleChange} />

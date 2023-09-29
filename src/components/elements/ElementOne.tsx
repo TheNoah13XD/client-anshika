@@ -20,7 +20,7 @@ const ElementOne: FC<ElementOneProps> = ({ className }) => {
                 <Link href="/work/one"><IconButton icon="north_east" /></Link>
             </div>
             <div className="element-1-column">
-                <Button icon="share" type="filled" className="pt-7">Share</Button>
+                <Button icon="share" type="filled">Share</Button>
             </div>
         </div>
     )
