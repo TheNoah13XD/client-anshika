@@ -26,7 +26,7 @@ const One: FC = ({}) => {
             enabled: true,
             sticky: true,
         },
-    }
+    };
 
     const secondSwiper = {
         centeredSlides: false,
@@ -36,13 +36,13 @@ const One: FC = ({}) => {
             enabled: true,
             sticky: true,
         },
-    }
+    };
 
     useEffect(() => {
         swiperOne.current.swiper.on('touchMove', function () {
             const one = swiperOne.current.swiper;
             const two = swiperTwo.current.swiper;
-            two.changeLanguageDirection('rtl')
+            two.changeLanguageDirection('rtl');
             two.translateTo(one.translate, 0, 0, false);
         });
     }, [swiperOne]);
@@ -51,7 +51,7 @@ const One: FC = ({}) => {
         swiperTwo.current.swiper.on('touchMove', function () {
             const one = swiperOne.current.swiper;
             const two = swiperTwo.current.swiper;
-            one.changeLanguageDirection('ltr')
+            one.changeLanguageDirection('ltr');
             one.translateTo(two.translate, 0, 0, false);
         });
     }, [swiperTwo]);

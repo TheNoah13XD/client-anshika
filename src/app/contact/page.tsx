@@ -4,6 +4,7 @@ import { FC, useState } from "react";
 
 // components
 import IconButton from "@/components/ui/IconButton";
+import Input from "@/components/ui/Input";
 
 const ContactPage: FC = ({}) => {
 
@@ -33,15 +34,14 @@ const ContactPage: FC = ({}) => {
         } catch (error) {
             console.error('Error sending email:', error);
         }
-
-    }
+    };
 
     const handleChange = (e: any) => {
         setForm({
             ...form,
             [e.target.name]: e.target.value
         })
-    }
+    };
 
     return (
         <>
@@ -57,30 +57,9 @@ const ContactPage: FC = ({}) => {
                 <div className="contact-form">
                     <form onSubmit={handleSubmit}>
                         <div>
-                            <div className="input-flex">
-                                <span>Hey! I'm </span>
-                                <div className="input-container">
-                                    <input type="text" name="name" autoComplete="off" required value={form.name} onChange={handleChange} />
-                                    <label htmlFor="name" className="label-name"></label>
-                                </div>
-                                <span>,</span>
-                            </div>
-                            <div className="input-flex input-pt">
-                                <span>Looking for </span>
-                                <div className="input-container">
-                                    <input type="text" name="text" autoComplete="off" required value={form.text} onChange={handleChange} />
-                                    <label htmlFor="text" className="label-name"></label>
-                                </div>
-                                <span>,</span>
-                            </div>
-                            <div className="input-flex input-pt">
-                                <span>And my email is </span>
-                                <div className="input-container">
-                                    <input type="text" name="email" autoComplete="off" required value={form.email} onChange={handleChange} />
-                                    <label htmlFor="email" className="label-name"></label>
-                                </div>
-                                <span>,</span>
-                            </div>
+                            <Input label="Hey! I'm " name="name" value={form.name} onChange={handleChange}/>
+                            <Input className="input-pt" label="Looking for " name="text" value={form.text} onChange={handleChange}/>
+                            <Input className="input-pt" label="And my email is " name="email" value={form.email} onChange={handleChange}/>
                         </div>
                         <div className="redirect">
                             <IconButton icon="north_east" />

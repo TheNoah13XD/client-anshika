@@ -1,0 +1,91 @@
+.drawer {
+    .burger {
+        position: fixed;
+        bottom: $base-padding * 17;
+        right: $base-padding * 19;
+        cursor: pointer;
+        color: var(--md-sys-color-secondary);
+        z-index: 9999;
+    }
+
+    @mixin item {
+        display: flex;
+        gap: $base-width * 3;
+        width: 100%;
+        height: $base-height * 14;
+        padding: $base-padding * 4;
+        border-radius: $full-border-radius;
+        transition: all 200ms cubic-bezier(0.2, 0, 0, 1);
+        .icon {
+            font-size: $type-headline-small;
+        }
+        .label {
+            font-size: $type-title-small;
+            font-weight: $medium-fw;
+        }
+    }
+
+    @mixin container {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 420px;
+        height: 100%;
+        border-radius: $x-large-border-radius;
+        background-color: var(--md-sys-color-surface-variant);
+        transition: $easing;
+        z-index: 200;
+        .headline {
+            position: absolute;
+            padding: $base-padding * 8;
+            font-size: $type-title-small;
+            font-weight: $medium-fw;
+            letter-spacing: $letter-spacing;
+            color: var(--md-sys-color-on-surface-variant);
+        }
+        .items-container {
+            display: flex;
+            width: 100%;
+            height: 100%;
+            padding: 0 $base-padding * 10;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            .destination-item {
+                @include item;
+                background-color: transparent;
+                .icon {
+                    color: var(--md-sys-color-on-surface-variant);
+                }
+                .label {
+                    color: var(--md-sys-color-on-surface-variant);
+                }
+                &:hover {
+                    background-color: rgba(29, 27, 32, 8%);
+                }
+                &:active {
+                    background-color: rgba(29, 27, 32, 12%);
+                }
+            }
+            .destination-active {
+                @include item;
+                background-color: var(--md-sys-color-primary);
+                .icon {
+                    color: var(--md-sys-color-on-primary);
+                }
+                .label {
+                    color: var(--md-sys-color-on-primary);
+                }
+            }
+        }
+    }
+
+    .drawer-container {
+        @include container;
+        right: 0;
+    }
+    .drawer-hidden {
+        @include container;
+        right: -420px;
+    }
+}

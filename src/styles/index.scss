@@ -17,24 +17,15 @@
 
 // components
 @import 'components/navrail';
+@import 'components/navdrawer';
 @import 'components/button';
 @import 'components/iconbtn';
 
 // utilities
 @import 'base/utilities';
-// @import 'layout/utility-layout';
+@import 'layout/utility-layout';
 
 // changes & additions
-.container {
-    position: relative;
-    box-sizing: border-box;
-    width: 100%;
-    height: 100vh;
-    margin: 0;
-    padding: 56px 0;
-    overflow: hidden;
-}
-
 .rail {
     background-color: var(--md-sys-color-primary-container);
     .rail-content {
@@ -154,99 +145,147 @@
     $col: math.div((($container-width - 72px) - ($margin * 2) - ($gap * ($columns - 1))), $columns);
 
     @media screen and (min-width: map-get($breakpoints, $breakpoint)) {
+        .container {
+            position: relative;
+            box-sizing: border-box;
+            width: 100%;
+            height: 100vh;
+            margin: 0;
+            padding: $base-padding * 9 0;
+            @include breakpoint('fr') {
+                padding: $base-padding * 14 0;
+            }
+            overflow: hidden;
+        }
+
         .scene {
             position: relative;
             width: 100%;
             height: 100%;
-            padding-left: $margin;
-            border-radius: 0 $x-large-border-radius $x-large-border-radius 0;
+            padding-left: 0;
+            @include breakpoint('fr') {
+                padding-left: $margin;
+            }
+            border-radius: $x-large-border-radius;
+            @include breakpoint('fr') {
+                border-radius: 0 $x-large-border-radius $x-large-border-radius 0;
+            }
             background-color: var(--md-sys-color-surface);
             z-index: 1;
         }
 
         // index page
 
-        .index-container {
-            padding-top: $base-padding * 6;
-            padding-bottom: $base-padding * 6;
-            @include breakpoint('lg') {
-                padding-top: $base-padding * 8;
-                padding-bottom: $base-padding * 12;
-            }
-        }
-
-        .index-headline {
-            width: $col * 5 + $gap * 4;
-            font-size: $type-display-medium;
-            @include breakpoint('fr') {
-                font-size: $type-display-small;
-            }
-            @include breakpoint('lg') {
-                font-size: $type-display-medium;
-            }
-            @include breakpoint('xl') {
-                font-size: 65px;
-            }
-            font-weight: $black-fw;
-            text-transform: uppercase;
-            letter-spacing: 3.25px;
-            line-height: 1.2;
-            color: var(--md-sys-color-on-surface);
-        }
-
-        .index-detail {
-            width: $col * 3 + $gap * 3;
-            font-size: $type-label-medium;
-            @include breakpoint('lg') {
-                width: $col * 3 + $gap * 2;
-            }
-            @include breakpoint('xl') {
-                width: $col * 2 + $gap * 2;
-            }
-            font-weight: $black-fw;
-            line-height: normal;
-            letter-spacing: $letter-spacing;
-            color: var(--md-sys-color-on-surface-variant);
-        }
-
-        .index-thumbnail {
-            position: relative;
-            width: $col * 4 + $gap * 4;
+        .index-page {
+            display: flex;
+            flex-direction: column-reverse;
+            width: 100%;
             height: 100%;
-            border-radius: $x-large-border-radius;
-            background-color: var(--md-ref-palette-primary95);
-            overflow: hidden;
-            .thumbnail {
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                object-fit: cover;
+            justify-content: space-between;
+            @include breakpoint('fr') {
+                flex-direction: row;
+                align-items: normal;
             }
-            .index-btn {
-                position: absolute;
-                left: $gap;
-                bottom: $base-padding * 6;
-                @include breakpoint('lg') {
-                    bottom: $base-padding * 12;
+            .index-container {
+                padding-top: $base-padding * 10;
+                padding-bottom: $base-padding * 10;
+                margin: 0 $col;
+                @include breakpoint('fr') {
+                    margin: 0;
+                    padding-top: $base-padding * 6;
+                    padding-bottom: $base-padding * 6;
                 }
-                z-index: 2;
-                .filled-iconbtn {
-                    background-color: var(--md-sys-color-primary-container);
-                    .icon {
-                        color: var(--md-sys-color-on-primary-container);
+                @include breakpoint('lg') {
+                    padding-top: $base-padding * 8;
+                    padding-bottom: $base-padding * 12;
+                }
+            }
+            .index-headline {
+                width: $col * 8 + $gap * 8 + $margin * 2;
+                padding-bottom: $base-padding * 5;
+                @include breakpoint('fr') {
+                    width: $col * 5 + $gap * 4;
+                    padding-bottom: 0;
+                }
+                font-size: $type-display-small;
+                @include breakpoint('lg') {
+                    font-size: $type-display-medium;
+                }
+                @include breakpoint('xl') {
+                    font-size: 65px;
+                }
+                font-weight: $black-fw;
+                text-transform: uppercase;
+                letter-spacing: 3.25px;
+                line-height: 1.2;
+                color: var(--md-sys-color-on-surface);
+            }
+            .index-detail {
+                width: $col * 4 + $gap * 4 + $margin;
+                font-size: $type-label-medium;
+                @include breakpoint('fr') {
+                    width: $col * 3 + $gap * 3;
+                }
+                @include breakpoint('lg') {
+                    width: $col * 3 + $gap * 2;
+                }
+                @include breakpoint('xl') {
+                    width: $col * 2 + $gap * 2;
+                }
+                font-weight: $black-fw;
+                line-height: normal;
+                letter-spacing: $letter-spacing;
+                color: var(--md-sys-color-on-surface-variant);
+            }
+            .index-thumbnail {
+                position: relative;
+                width: $col * 10 + $gap * 11 + $margin * 2;
+                height: $base-height * 62;
+                margin: $base-margin * 10 auto;
+                @include breakpoint('fr') {
+                    width: $col * 4 + $gap * 4;
+                    height: 100%;
+                    margin: 0;
+                }
+                border-radius: $x-large-border-radius;
+                background-color: var(--md-ref-palette-primary95);
+                overflow: hidden;
+                .thumbnail {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+                .index-btn {
+                    position: absolute;
+                    right: $base-padding * 7;
+                    bottom: $base-padding * 5;
+                    @include breakpoint('fr') {
+                        left: $gap;
+                        bottom: $base-padding * 6;
                     }
-                    &:hover {
-                        background-color: var(--md-ref-palette-primary95);
+                    @include breakpoint('lg') {
+                        bottom: $base-padding * 12;
+                    }
+                    z-index: 2;
+                    .filled-iconbtn {
+                        background-color: var(--md-sys-color-primary-container);
                         .icon {
                             color: var(--md-sys-color-on-primary-container);
                         }
-                    }
-                    &:active {
-                        background-color: var(--md-ref-palette-primary98);
-                        .icon {
-                            color: var(--md-sys-color-on-primary-container);
+                        &:hover {
+                            background-color: var(--md-ref-palette-primary95);
+                            .icon {
+                                color: var(--md-sys-color-on-primary-container);
+                            }
+                        }
+                        &:active {
+                            background-color: var(--md-ref-palette-primary98);
+                            .icon {
+                                color: var(--md-sys-color-on-primary-container);
+                            }
                         }
                     }
                 }
@@ -258,12 +297,19 @@
         .work-container {
             display: flex;
             flex-direction: column;
-            justify-content: center;
+            justify-content: space-between;
             width: 100%;
             height: 100%;
-            padding: 0 $col;
+            padding: $base-padding * 10 $col + $gap * 2;
+            @include breakpoint('fr') {
+                justify-content: center;
+                padding: 0 $col;
+            }
             & > *:not(:first-child) {
-                margin-top: $base-margin * 22;
+                margin-top: 0;
+                @include breakpoint('fr') {
+                    margin-top: $base-margin * 22;
+                }
             }
             .work-row {
                 display: flex;
@@ -274,17 +320,32 @@
                     display: flex;
                     flex-direction: column;
                     img {
-                        width: $col + $gap * 2;
+                        width: $col + $gap * 4;
+                        @include breakpoint('fr') {
+                            width: $col + $gap * 2;
+                        }
                     }
                     .filled-iconbtn {
-                        margin-left: -$gap;
+                        margin-left: -$gap * 2;
+                        @include breakpoint('fr') {
+                            margin-left: -$gap;
+                        }
                     }
                     .element-1-column {
                         display: flex;
-                        justify-content: center;
-                        width: $col + $gap * 2;
+                        justify-content: flex-start;
+                        width: $col * 2 + $gap;
+                        @include breakpoint('fr') {
+                            justify-content: center;
+                            width: $col + $gap * 2;
+                        }
                         div {
-                            padding-top: $base-padding * 3;
+                            transform: scale(.8);
+                            padding-top: $base-padding * 2;
+                            @include breakpoint('fr') {
+                                transform: scale(1);
+                                padding-top: $base-padding * 3;
+                            }
                             @include breakpoint('lg') {
                                 padding-top: $base-padding * 7;
                             }
@@ -303,13 +364,19 @@
                     height: 100%;
                     .definition-1 {
                         position: relative;
-                        width: $col * 6 + $gap * 6;
+                        width: $col * 7 + $gap * 7 + $margin;
+                        @include breakpoint('fr') {
+                            width: $col * 6 + $gap * 6;
+                        }
                         display: flex;
                         align-items: flex-start;
                         font-weight: $black-fw;
                         img {
                             position: absolute;
-                            width: $col * 6 + $gap * 6;
+                            width: $col * 7 + $gap * 7 + $margin;
+                            @include breakpoint('fr') {
+                                width: $col * 6 + $gap * 6;
+                            }
                             z-index: -1;
                         }
                         .filled-iconbtn {
@@ -318,16 +385,23 @@
                             margin: $base-margin * 4 $gap;
                         }
                         p {
-                            font-size: $type-headline-small;
+                            font-size: $type-title-large;
+                            letter-spacing: 1.1px;
+                            @include breakpoint('fr') {
+                                font-size: $type-headline-small;
+                                letter-spacing: 2px;
+                            }
                             @include breakpoint('lg') {
                                 font-size: $type-headline-medium;
                             }
                             @include breakpoint('xl') {
                                 font-size: $base-width * 10;
                             }
-                            width: $col * 4 + $gap * 3;
+                            width: $col * 4 + $gap * 3 + $margin;
+                            @include breakpoint('fr') {
+                                width: $col * 4 + $gap * 3;
+                            }
                             margin-right: $base-width * -146;
-                            letter-spacing: 2px;
                             line-height: normal;
                             text-transform: uppercase;
                             color: var(--md-sys-color-on-primary-container);
@@ -335,8 +409,12 @@
                         }
                     }
                     .definition-2 {
-                        width: $col * 4 + $gap * 6;
-                        padding: $base-padding * 5 $base-padding * 17;
+                        width: $col * 5 + $gap * 4 + $margin;
+                        padding: $base-padding * 3 $base-padding * 17;
+                        @include breakpoint('fr') {
+                            width: $col * 4 + $gap * 6;
+                            padding: $base-padding * 5 $base-padding * 17;
+                        }
                         @include breakpoint('lg') {
                             width: $col * 4 + $gap * 4;
                             padding: $base-padding * 5 $base-padding * 19;
@@ -348,7 +426,7 @@
                         background-color: var(--md-sys-color-secondary-container);
                         p {
                             font-size: 10px;
-                            @include breakpoint('lg') {
+                            @include breakpoint('fr') {
                                 font-size: $type-label-small;
                             }
                             @include breakpoint('xl') {
@@ -365,10 +443,16 @@
                     position: relative;
                     display: flex;
                     img {
-                        width: $col * 3 + $gap * 3;
+                        width: $col * 4 + $gap * 2 + $margin;
+                        @include breakpoint('fr') {
+                            width: $col * 3 + $gap * 3;
+                        }
                     }
                     .filled-iconbtn {
-                        margin-left: $gap * -0.5;
+                        margin-left: $gap * -3;
+                        @include breakpoint('fr') {
+                            margin-left: $gap * -0.5;
+                        }
                         @include breakpoint('lg') {
                             margin-left: $gap * -1;
                         }
@@ -382,11 +466,17 @@
                     display: flex;
                     align-items: flex-end;
                     img {
-                        width: $col * 3 + $gap * 3;
+                        width: $col * 4 + $gap * 2 + $margin;
+                        @include breakpoint('fr') {
+                            width: $col * 3 + $gap * 3;
+                        }
                         z-index: -1;
                     }
                     .filled-iconbtn {
-                        margin-right: $gap * -0.5;
+                        margin-right: $gap * -3;
+                        @include breakpoint('fr') {
+                            margin-right: $gap * -0.5;
+                        }
                         @include breakpoint('lg') {
                             margin-right: $gap * -1;
                         }
@@ -422,7 +512,10 @@
             height: 100%;
             display: flex;
             flex-direction: column;
-            padding: $base-padding * 4 0;
+            padding: $base-padding * 10 0;
+            @include breakpoint('fr') {
+                padding: $base-padding * 4 0;
+            }
             @include breakpoint('lg') {
                 padding: $base-padding * 12 0;
             }
@@ -435,9 +528,15 @@
                 display: flex;
                 flex-direction: column;
                 align-items: flex-end;
-                padding-right: $col;
+                padding-right: $col + $gap;
+                @include breakpoint('fr') {
+                    padding-right: $col;
+                }
                 .brand {
-                    font-size: 81px;
+                    font-size: $type-display-large;
+                    @include breakpoint('fr') {
+                        font-size: 81px;
+                    }
                     @include breakpoint('lg') {
                         font-size: 91px;
                     }
@@ -451,7 +550,10 @@
                     color: var(--md-sys-color-on-surface);
                 }
                 .tagline {
-                    font-size: 72px;
+                    font-size: 51px;
+                    @include breakpoint('fr') {
+                        font-size: 72px;
+                    }
                     @include breakpoint('lg') {
                         font-size: 81px;
                     }
@@ -468,15 +570,22 @@
             .work-around {
                 display: flex;
                 flex-direction: column;
-                width: $col * 8 + $gap * 7;
+                width: $col * 10 + $gap * 11 + $margin * 2;
+                @include breakpoint('fr') {
+                    width: $col * 8 + $gap * 7;
+                }
                 margin-left: -($col + $gap);
                 p {
-                    width: $col * 4 + $gap * 4;
-                    padding: $base-padding * 5 $col $base-padding * 5 ($col * 2 + $gap);
+                    width: $col * 5 + $gap * 4 + $margin * 2;
+                    padding: $base-padding * 5 $col + $gap $base-padding * 5 ($col * 2 + $gap);
                     font-size: 10px;
-                    @include breakpoint('lg') {
+                    @include breakpoint('fr') {
+                        width: $col * 4 + $gap * 4;
                         padding: $base-padding * 5 $col $base-padding * 5 ($col * 2 + $gap);
-                        font-size: 10px;
+                        font-size: $type-label-small;
+                    }
+                    @include breakpoint('lg') {
+                        font-size: $type-label-small;
                     }
                     @include breakpoint('xl') {
                         padding: $base-padding * 5 $base-padding * 30 $base-padding * 5 $base-padding * 60;
@@ -492,12 +601,20 @@
                     margin-bottom: $base-margin * -10;
                 }
                 img {
-                    width: $col * 8 + $gap * 7;
+                    width: $col * 10 + $gap * 11 + $margin * 2;
+                    @include breakpoint('fr') {
+                        width: $col * 8 + $gap * 7;
+                    }
                     z-index: -1;
                 }
                 .filled-iconbtn {
                     width: $base-width * 11;
                     height: $base-height * 11;
+                    margin-left: auto;
+                    margin-right: $col + $gap;
+                    @include breakpoint('fr') {
+                        margin-right: $col;
+                    }
                     @include breakpoint('lg') {
                         width: $base-width * 12;
                         height: $base-height * 12;
@@ -506,8 +623,6 @@
                         width: $base-width * 17;
                         height: $base-height * 17;
                     }
-                    margin-left: auto;
-                    margin-right: $col;
                     margin-top: $base-margin * -8.5;
                     background-color: var(--md-sys-color-primary-container);
                     .icon {
@@ -585,8 +700,14 @@
         .contact-container {
             display: flex;
             flex-direction: column;
-            justify-content: center;
-            gap: $base-padding * 10;
+            justify-content: space-between;
+            padding: $base-padding * 6 0 $base-padding * 8 $col;
+            @include breakpoint('fr') {
+                justify-content: flex-start;
+                gap: $base-padding * 10;
+                padding: $base-padding * 6 0 0 0;
+                justify-content: center;
+            }
             @include breakpoint('lg') {
                 gap: $base-padding * 18;
             }
@@ -600,8 +721,7 @@
             }
             text-transform: uppercase;
             .basics {
-                padding-left: 0;
-                @include breakpoint('lg') {
+                @include breakpoint('fr') {
                     padding-left: 0;
                 }
                 @include breakpoint('xl') {
@@ -609,11 +729,18 @@
                 }
                 h1 {
                     display: inline-block;
-                    width: $col * 5 + $gap * 6;
+                    width: $col * 6 + $gap * 6 + $margin;
                     height: $base-height * 20;
-                    font-size: 91px;
+                    font-size: 81px;
+                    letter-spacing: 4.05px;
                     line-height: normal;
-                    letter-spacing: 5.8px;
+                    @include breakpoint('fr') {
+                        width: $col * 5 + $gap * 6;
+                        height: $base-height * 20;
+                        font-size: 91px;
+                        line-height: normal;
+                        letter-spacing: 5.8px;
+                    }
                     @include breakpoint('lg') {
                         height: $base-height * 24;
                         width: $col * 5 + $gap * 5;
@@ -630,9 +757,12 @@
                     background-color: var(--md-sys-color-on-primary-fixed-variant);
                 }
                 .subtitle {
-                    margin-top: 0;
+                    margin-top: $base-margin;
+                    @include breakpoint('fr') {
+                        margin-top: 0;
+                    }
                     @include breakpoint('lg') {
-                        margin-top: $base-margin * 7;
+                        margin-top: $base-margin * 4;
                     }
                     span {
                         display: table;
@@ -651,16 +781,16 @@
                 display: flex;
                 flex-direction: column;
                 padding-left: 0;
-                @include breakpoint('lg') {
-                    padding-left: 0;
-                }
                 @include breakpoint('xl') {
                     padding-left: $col;
                 }
                 form {
                     display: flex;
                     flex-direction: column;
-                    gap: $base-padding * 10;
+                    gap: $base-padding * 14;
+                    @include breakpoint('fr') {
+                        gap: $base-padding * 10;
+                    }
                     @include breakpoint('lg') {
                         gap: $base-padding * 18;
                     }
@@ -669,24 +799,25 @@
                     }
                     .input-pt {
                         padding-top: 0;
-                        @include breakpoint('lg') {
+                        @include breakpoint('md') {
                             padding-top: $base-padding * 3;
                         }
                     }
                     .input-flex {
                         display: flex;
                         gap: $base-padding * 4;
-                        @include breakpoint('lg') {
-                            gap: $base-padding * 4;
-                        }
                         @include breakpoint('xl') {
                             gap: $base-padding * 6;
                         }
                         position: relative;
                         span {
-                            font-size: 51px;
+                            font-size: $type-display-medium;
                             line-height: normal;
                             letter-spacing: 2.55px;
+                            line-height: normal;
+                            @include breakpoint('fr') {
+                                font-size: 51px;
+                            }
                             @include breakpoint('lg') {
                                 font-size: 64px;
                                 letter-spacing: 3.2px;
@@ -700,7 +831,10 @@
                         }
                         .input-container {
                             position: relative;
-                            width: $base-width * 90;
+                            width: $base-width * 80;
+                            @include breakpoint('fr') {
+                                width: $base-width * 90;
+                            }
                             @include breakpoint('lg') {
                                 width: $base-width * 105;
                             }
@@ -709,7 +843,16 @@
                                 width: 100%;
                                 height: 100%;
                                 border: none;
-                                font-size: 64px;
+                                font-size: $type-display-medium;
+                                @include breakpoint('fr') {
+                                    font-size: 51px;
+                                }
+                                @include breakpoint('lg') {
+                                    font-size: 64px;
+                                }
+                                @include breakpoint('xl') {
+                                    font-size: 81px;
+                                }
                                 color: var(--md-sys-color-on-surface);
                                 background: none;
                                 &:focus {
@@ -726,7 +869,7 @@
                             }
                             label {
                                 position: absolute;
-                                bottom: 20px;
+                                bottom: 10px;
                                 left: 0px;
                                 width: 100%;
                                 height: 100%;
@@ -750,14 +893,25 @@
                         width: 100%;
                         display: flex;
                         justify-content: flex-end;
-                        padding-right: $col + $gap;
+                        padding-right: $col + $gap * 2;
+                        @include breakpoint('fr') {
+                            padding-right: $col + $gap;
+                        }
                         .filled-iconbtn {
-                            width: $col;
-                            height: $col;
+                            width: $col + $gap;
+                            height: $col + $gap;
+                            @include breakpoint('fr') {
+                                width: $col;
+                                height: $col;
+                            }
                             background-color: var(--md-sys-color-primary-container);
                             .icon {
-                                width: $base-width * 16 !important;
-                                font-size: $base-width * 16 !important;
+                                width: $base-width * 8 !important;
+                                font-size: $base-width * 8 !important;
+                                @include breakpoint('fr') {
+                                    width: $base-width * 16 !important;
+                                    font-size: $base-width * 16 !important;
+                                }
                                 color: var(--md-sys-color-on-primary-container);
                             }
                             &:hover {
@@ -774,7 +928,10 @@
                             }
                         }
                         img {
-                            width: $col;
+                            width: $col + $gap;
+                            @include breakpoint('fr') {
+                                width: $col;
+                            }
                         }
                     }
                 }

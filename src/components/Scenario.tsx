@@ -1,13 +1,12 @@
-'use client'
+'use client';
 
 import { FC } from 'react';
-import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
 // icons
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faInstagram, faTwitter } from '@fortawesome/free-brands-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faInstagram, faTwitter } from '@fortawesome/free-brands-svg-icons';
 import { faEnvelope } from '@fortawesome/free-regular-svg-icons';
 
 interface ScenarioProps {
@@ -23,7 +22,7 @@ const Scenario: FC<ScenarioProps> = ({ className }) => {
         '/work': 'Portfolio',
         '/human': 'Oh, Me!',
         '/contact': 'Hyped?'
-    }
+    };
 
     const contextText = contextTexts[pathname] || 'It\'s hot!';
 

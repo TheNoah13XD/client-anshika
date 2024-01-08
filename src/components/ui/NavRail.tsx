@@ -1,7 +1,6 @@
-'use client'
+'use client';
 
-import React from 'react';
-import { FC } from 'react';
+import React, { FC } from 'react';
 import { usePathname } from 'next/navigation';
 import Link from 'next/link';
 import { MaterialSymbol } from 'material-symbols';
@@ -11,6 +10,7 @@ import Icon from './Icon';
 
 interface NavRailProps {
     children: React.ReactNode;
+    className?: string;
 }
 
 interface NavItemProps {
@@ -20,11 +20,11 @@ interface NavItemProps {
     isActive?: boolean;
 }
 
-const NavRail: FC<NavRailProps> = ({ children }) => {
+const NavRail: FC<NavRailProps> = ({ children, className }) => {
     const pathname = usePathname();
 
     return (
-        <nav className="rail">
+        <nav className={`rail ${className}`}>
             <div className="rail-content">
             {React.Children.map(children, (child) =>
                 React.isValidElement(child)
@@ -33,11 +33,10 @@ const NavRail: FC<NavRailProps> = ({ children }) => {
             )}
             </div>
         </nav>
-    );
-};
+    )
+}
 
 const NavItem: FC<NavItemProps> = ({ path, icon, label, isActive }) => {
-    
     const classNames = `destination-${isActive ? 'active' : 'item'}`;
 
     return (
@@ -47,7 +46,7 @@ const NavItem: FC<NavItemProps> = ({ path, icon, label, isActive }) => {
             </div>
             <span className="label">{label}</span>
         </Link>
-    );
-};
+    )
+}
 
 export { NavRail, NavItem };

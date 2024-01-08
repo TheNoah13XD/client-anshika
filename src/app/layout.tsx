@@ -1,11 +1,11 @@
-'use client'
+'use client';
 
-import { StrictMode } from 'react'
+import { StrictMode, useEffect, useState } from 'react';
 import React from 'react';
 import { usePathname } from 'next/navigation';
 
 // styles
-import '@/styles/index.css'
+import '@/styles/index.css';
 
 // components
 import { Grid, Col } from '@/components/ui/Grid';
@@ -14,18 +14,32 @@ import Scene from '@/components/Scene';
 import Scenario from '@/components/Scenario';
 
 // fontawesome
-import { config } from '@fortawesome/fontawesome-svg-core'
-import '@fortawesome/fontawesome-svg-core/styles.css'
-config.autoAddCss = false
+import { config } from '@fortawesome/fontawesome-svg-core';
+import '@fortawesome/fontawesome-svg-core/styles.css';
+config.autoAddCss = false;
 
 export default function RootLayout({
 	children,
 }: {
 	children: React.ReactNode
 }) {
+	const [width, setWidth] = useState(window.innerWidth);
+
 	const pathname = usePathname();
 	const routeConfig = ['/', '/work', '/human', '/contact'];
 	const hasScenario = routeConfig.includes(pathname);
+
+	useEffect(() => {
+		const handleResize = () => {
+		  setWidth(window.innerWidth);
+		};
+	  
+		window.addEventListener('resize', handleResize);
+	  
+		return () => {
+		  window.removeEventListener('resize', handleResize);
+		};
+	}, [width]);
 
 	return (
 		<html lang="en">
@@ -36,18 +50,17 @@ export default function RootLayout({
 			<body className='container display-f'>
 
 				<StrictMode>
-					<Nav />
+					<Nav className='xs-display-n fr-display-f' />
 					
 					<Grid className='w-full'>
-						{hasScenario ? (
-							<>
-								<Col col='2' extraLMargin className='z-2 overflow-h'>
-									<Scenario />
-								</Col>
-							</>
+						{hasScenario && width > 1239 ? (
+							<Col col='2' extraLMargin className='z-2 overflow-h'>
+								<Scenario />
+							</Col>
 						) : null}
-						<Col col={hasScenario ? '10' : '12'} extraLMargin className='overflow-h'>
+						<Col col={hasScenario  && width > 1239 ? '10' : '12'} extraLMargin={width > 1239} className='overflow-h'>
 							<Scene className='overflow-s'>
+								<Nav className='xs-display-n sm-display-f fr-display-n' />
 								{children}
 							</Scene>
 						</Col>
