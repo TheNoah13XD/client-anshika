@@ -1,7 +1,6 @@
 'use client';
 
-import { StrictMode, useEffect, useState } from 'react';
-import React from 'react';
+import React, { StrictMode } from 'react';
 import { usePathname } from 'next/navigation';
 
 // styles
@@ -23,23 +22,9 @@ export default function RootLayout({
 }: {
 	children: React.ReactNode
 }) {
-	const [width, setWidth] = useState(window.innerWidth);
-
-	const pathname = usePathname();
-	const routeConfig = ['/', '/work', '/human', '/contact'];
-	const hasScenario = routeConfig.includes(pathname);
-
-	useEffect(() => {
-		const handleResize = () => {
-		  setWidth(window.innerWidth);
-		};
-	  
-		window.addEventListener('resize', handleResize);
-	  
-		return () => {
-		  window.removeEventListener('resize', handleResize);
-		};
-	}, [width]);
+    const pathname = usePathname();
+    const routeConfig = ['/', '/work', '/human', '/contact'];
+    const hasScenario = routeConfig.includes(pathname);
 
 	return (
 		<html lang="en">
@@ -48,25 +33,32 @@ export default function RootLayout({
 				<meta name='description' content='developed by .noah' />
 			</head>
 			<body className='container display-f'>
-
 				<StrictMode>
 					<Nav className='xs-display-n fr-display-f' />
-					
 					<Grid className='w-full'>
-						{hasScenario && width > 1239 ? (
-							<Col col='2' extraLMargin className='z-2 overflow-h'>
+
+						{/* big screens */}
+						{hasScenario ? (
+							<Col col='2' extraLMargin className='z-2 overflow-h xs-display-n fr-display-f'>
 								<Scenario />
 							</Col>
 						) : null}
-						<Col col={hasScenario  && width > 1239 ? '10' : '12'} extraLMargin={width > 1239} className='overflow-h'>
+						<Col col="10" extraLMargin className='overflow-h xs-display-n fr-display-f'>
+							<Scene className='overflow-s'>
+								{children}
+							</Scene>
+						</Col>
+
+						{/* small screens */}
+						<Col col="12" className='overflow-h xs-display-f fr-display-n'>
 							<Scene className='overflow-s'>
 								<Nav className='xs-display-n sm-display-f fr-display-n' />
 								{children}
 							</Scene>
 						</Col>
+
 					</Grid>
 				</StrictMode>
-
 			</body>
 		</html>
 	)
